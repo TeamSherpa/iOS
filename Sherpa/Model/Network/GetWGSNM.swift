@@ -16,35 +16,22 @@ class GetWGSNM : NetworkDelegate {
     
     func getwgs(x: String, y: String, token: String, index: Int) {
         
-    
         let URL = "https://sgisapi.kostat.go.kr/OpenAPI3/transformation/transcoord.json?accessToken=\(token)&src=5186&dst=4326&posY=\(y)&posX=\(x)"
-        
-        Alamofire.request(URL, method: .get, encoding: JSONEncoding.default, headers:nil).responseObject{
+        Alamofire.request(URL, method: .get, encoding: JSONEncoding.default, headers:nil).responseObject{ [weak self]
             (response: DataResponse<WGSVO>) in
-            
             switch response.result{
-                
-            case .success :
+            case .success:
                 guard let value = response.result.value else {
-                    self.delegate.networkFailed(msg: "")
+                    self?.delegate.networkFailed(msg: "")
                     return
                 }
-                
-                
-                    if let resultdoc  = value.result {
-                        self.delegate.networkResultData(resultData: (index, resultdoc), code: "success getWGS")
-                    }
-             
-                
-                break
-            case .failure(let err) :
-                
-                print("네트워크 접속 실패")
-                print(err.localizedDescription)
-                self.delegate.networkFailed(msg: "")
-                break
+                if let resultdoc  = value.result {
+                    self?.delegate.networkResultData(resultData: (index, resultdoc), code: "success getWGS")
+                }
+            case .failure:
+                self?.delegate.networkFailed(msg: "")
             }
         }
     }
-   
+    
 }
