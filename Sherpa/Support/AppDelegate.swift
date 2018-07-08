@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey("AIzaSyAv_n7CaLa9cCRBOMcX0jnac4-XUIDDUvc")
         GMSPlacesClient.provideAPIKey("AIzaSyAv_n7CaLa9cCRBOMcX0jnac4-XUIDDUvc")
         
+        LocalNotificationManager.reqeustAuthorization()
+        
         return true
     }
 

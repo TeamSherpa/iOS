@@ -20,4 +20,16 @@ extension Date {
         let date: Date = dateFormatter.date(from: date) ?? Date()
         return resultFormatter.string(from: date)
     }
+    
+    static func dateFormatterWith(dateFormat: String) -> DateFormatter {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US")
+        dateFormatter.dateFormat = dateFormat
+        return dateFormatter
+    }
+    
+    var dateString: String {
+        let dateFormatter = Date.dateFormatterWith(dateFormat: "MMdd")
+        return dateFormatter.string(from: self)
+    }
 }

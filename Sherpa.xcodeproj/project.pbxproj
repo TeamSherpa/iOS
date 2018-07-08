@@ -63,6 +63,8 @@
 		CED9E9C020D9717C00B261BF /* MainViewController+SFSpeechRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9BF20D9717C00B261BF /* MainViewController+SFSpeechRecognizerDelegate.swift */; };
 		CED9E9C220D9723200B261BF /* MainViewController+UIGestureRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9C120D9723200B261BF /* MainViewController+UIGestureRecognizerDelegate.swift */; };
 		CED9E9C420D97AA400B261BF /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9C320D97AA400B261BF /* Category.swift */; };
+		CEFFCAB320F2400700ABA240 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFFCAB220F2400700ABA240 /* LocalNotificationManager.swift */; };
+		CEFFCAB520F240E100ABA240 /* RecommendMountainList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFFCAB420F240E100ABA240 /* RecommendMountainList.swift */; };
 		FFB8134520D3905000A51083 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB8134420D3905000A51083 /* Detail.storyboard */; };
 		FFB8134920D3F7F000A51083 /* DetailListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB8134820D3F7F000A51083 /* DetailListViewController.swift */; };
 		FFB8134B20D3FC1F00A51083 /* DetailMountainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB8134A20D3FC1F00A51083 /* DetailMountainViewController.swift */; };
@@ -127,6 +129,8 @@
 		CED9E9BF20D9717C00B261BF /* MainViewController+SFSpeechRecognizerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+SFSpeechRecognizerDelegate.swift"; sourceTree = "<group>"; };
 		CED9E9C120D9723200B261BF /* MainViewController+UIGestureRecognizerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+UIGestureRecognizerDelegate.swift"; sourceTree = "<group>"; };
 		CED9E9C320D97AA400B261BF /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		CEFFCAB220F2400700ABA240 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
+		CEFFCAB420F240E100ABA240 /* RecommendMountainList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendMountainList.swift; sourceTree = "<group>"; };
 		DB497547A79501BE29D12E20 /* Pods_Sherpa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sherpa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3007CEC71A6ED4CD668E80A /* Pods-Sherpa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sherpa.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sherpa/Pods-Sherpa.release.xcconfig"; sourceTree = "<group>"; };
 		FFB8134420D3905000A51083 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
@@ -379,6 +383,8 @@
 			isa = PBXGroup;
 			children = (
 				CED9E9AA20D810ED00B261BF /* GeoConverter.swift */,
+				CEFFCAB220F2400700ABA240 /* LocalNotificationManager.swift */,
+				CEFFCAB420F240E100ABA240 /* RecommendMountainList.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -578,6 +584,7 @@
 				CE35BBD720D696490068C189 /* NetworkRequestor.swift in Sources */,
 				CE89B15720D4C0FF00619841 /* RecommendModel.swift in Sources */,
 				CE18F23220DC0A2D0016EC8E /* EducationCollectionViewCell.swift in Sources */,
+				CEFFCAB320F2400700ABA240 /* LocalNotificationManager.swift in Sources */,
 				CE8E4F6620DF4ECE00F4964E /* MountainCell.swift in Sources */,
 				CED9E9BC20D96DE700B261BF /* MainViewController+UITableViewDataSource.swift in Sources */,
 				52E0CD7C20C67F00000B8489 /* InfoViewController.swift in Sources */,
@@ -588,6 +595,7 @@
 				CE962DB220DC235300B5A831 /* Education.swift in Sources */,
 				521B80DD20C938E2003F8833 /* MainViewController.swift in Sources */,
 				CED9E9C020D9717C00B261BF /* MainViewController+SFSpeechRecognizerDelegate.swift in Sources */,
+				CEFFCAB520F240E100ABA240 /* RecommendMountainList.swift in Sources */,
 				52C972B620D4E4E50000988E /* SpeachStringresult.swift in Sources */,
 				CED9E9A420D810B000B261BF /* SGISVO.swift in Sources */,
 				CE35BBCD20D68F1A0068C189 /* DetailDescriptionReusableView.swift in Sources */,
