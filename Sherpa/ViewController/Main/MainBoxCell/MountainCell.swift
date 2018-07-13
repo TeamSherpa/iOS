@@ -14,6 +14,11 @@ class MountainCell: UICollectionViewCell, CollectionViewModelRepresentable {
     @IBOutlet private weak var mountainNameLabel: UILabel!
     @IBOutlet private weak var mountainLocationLabel: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setShadow()
+    }
+    
     var model: ModelTransformable? {
         didSet {
             if let mountain = model as? Mountain {

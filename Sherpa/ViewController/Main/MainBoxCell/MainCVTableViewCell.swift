@@ -15,6 +15,7 @@ class MainCVTableViewCell: UITableViewCell {
     @IBOutlet weak var orderCV: UICollectionView!
     @IBOutlet weak var voiceRecodeLB: UILabel!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet weak var resultCollectionViewHeightConstraint: NSLayoutConstraint!
     
     var model = [ModelTransformable]() {
         didSet {
@@ -43,8 +44,14 @@ extension MainCVTableViewCell: UICollectionViewDelegateFlowLayout {
             return .zero
         }
         switch category {
-        case .education, .news, .mountain:
-            return CGSize(width: 170, height: 240)
+        case .education:
+            resultCollectionViewHeightConstraint.constant = 163
+            layoutIfNeeded()
+            return CGSize(width: 129, height: 150)
+        case .news, .mountain:
+            resultCollectionViewHeightConstraint.constant = 253
+            layoutIfNeeded()
+            return CGSize(width: 170, height: 220)
         default:
             return .zero
         }

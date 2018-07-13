@@ -15,6 +15,11 @@ class EducationCollectionViewCell: UICollectionViewCell, CollectionViewModelRepr
     @IBOutlet weak var placeLabel: UILabel!
     @IBOutlet weak var periodLabel: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setShadow()
+    }
+    
     var model: ModelTransformable? {
         didSet {
             let education = model as! Education

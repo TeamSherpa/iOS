@@ -10,4 +10,16 @@ import UIKit
 
 extension MainViewController : UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if questions.count > model.count, indexPath.row == questions.count - 1 {
+            return 280
+        } else {
+            let category = self.category[indexPath.row] ?? .none
+            switch category {
+            case .education: return 228
+            case .news, .mountain: return 300
+            default: return 48
+            }
+        }
+    }
 }

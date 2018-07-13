@@ -49,6 +49,10 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="3"/>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="bodyLabel" destination="fQ7-23-pua" id="aaZ-QR-Fw8"/>
                 <outlet property="timeLabel" destination="i7B-HR-Fk4" id="OV9-h1-EOa"/>

@@ -14,14 +14,6 @@ extension MainViewController: UITableViewDataSource {
         return questions.count
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if questions.count > model.count, indexPath.row == questions.count - 1 {
-            return 280
-        } else {
-            return (category[indexPath.item] == .none) ? 48 : 280
-        }
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "BoxCell") as! MainCVTableViewCell
