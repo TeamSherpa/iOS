@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class SGISVO :Mappable{
+class SGISVO: Mappable {
     
     var id: String?
     var result: Access?
@@ -17,27 +17,23 @@ class SGISVO :Mappable{
     var errCd: Int?
     var trId: String?
     
-    required init?(map: Map) {
-        
-    }
+    required init?(map: Map) { }
+    
     func mapping(map: Map) {
         id <- map["id"]
         result <- map["result"]
         errMsg <- map["errMsg"]
         errCd <- map["errCd"]
         trId <- map["trId"]
-        
     }
 }
 
-class Access:Mappable{
+class Access: Mappable {
     
     var accessTimeout: String?
     var accessToken: String?
     
-    required init?(map: Map) {
-        
-    }
+    required init?(map: Map) { }
     
    func mapping(map: Map) {
         accessTimeout <- map["accessTimeout"]

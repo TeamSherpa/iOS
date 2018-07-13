@@ -8,8 +8,6 @@
 
 import UIKit
 import NVActivityIndicatorView
-import Realm
-import RealmSwift
 import Speech
 
 class MainViewController: UIViewController, NVActivityIndicatorViewable {
@@ -25,32 +23,13 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
     
-    var networkflag : Int = 0
-    /*
-    var speechVO: [SpeechResponse<Mountain>] = [] {
-        didSet {
-            if micStringLB.text?.isNotEmpty ?? true {
-                addspeechData(string: micStringLB.text ?? "")
-                print("카운트세기"+"\(speechVO.count)")
-            }
-            let count = speechVO.count
-            print("speechVO에 담겨저있는 데이터 배열 category \(speechVO[count - 1].response!)")
-            print("speechVO에 담겨저있는 데이터 배열 갯수 \(count)")
-            tableview.reloadData()
-            tableview.scrollToBottom()
-        }
-    }
-    */
-    let realm = try! Realm()
-    
     let activityIndicatorView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 20, height: 20),
                                                                   type: NVActivityIndicatorType(rawValue: 23)!)
     let micimg = UIImageView()
-    // 마이크 애니메이션 액티비티 인디케이터 뷰
     var detectionTimer = Timer()
     
-    var tablex :CGFloat = 0.0
-    var tabley :CGFloat = 0.0
+    var tablex: CGFloat = 0
+    var tabley: CGFloat = 0
     var isListening: Bool = false
     
     var model = [[ModelTransformable]]() {
@@ -67,19 +46,7 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
     }
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        //네트워크
-        /*
-        let firstNM = SpeechNM()
-        firstNM.sendPreviousSpeeches(realm: realm.objects(SpeechStringResult.self)) { [weak self] speech in
-            guard let meta = speech?.meta else {
-                return
-            }
-            self?.speechVO.append(meta)
-        }
-        */
-        
         speechRecognizer?.delegate = self
         updateUI()
         addGesture()
@@ -112,17 +79,6 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
         if segue.identifier == DetailMountainViewController.identifier {
             let destination = segue.destination as! DetailMountainViewController
             destination.mountain = sender as? Mountain
-        }
-    }
-    
-    //Realm 데이터 저장
-    func addspeechData(string: String){
-        
-        let speechdata = SpeechStringResult()
-        speechdata.stringdata = string
-        
-        try! realm.write {
-            realm.add(speechdata)
         }
     }
     
@@ -183,28 +139,25 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
             }
         }
         
-        
         let audioSession = AVAudioSession.sharedInstance()
         do {
             try audioSession.setCategory(AVAudioSessionCategoryRecord)
             try audioSession.setMode(AVAudioSessionModeMeasurement)
             try audioSession.setActive(true, with: .notifyOthersOnDeactivation)
         } catch {
-            print("오디오 세션이 정확히 준비되지않았다.")
+            print("error: ", error.localizedDescription)
         }
         
         let recordingFormat = audioEngine.inputNode.outputFormat(forBus: 0)
         audioEngine.inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { [weak self] buffer, time in
             self?.recognitionRequest?.append(buffer)
         }
-        
         audioEngine.prepare()
-        
         do {
             try audioEngine.start()
             micStringLB.text = "듣고있어요 :)"
         } catch {
-            print("오디오엔진 시작을 실패했습니다.")
+            print("error: ", error.localizedDescription)
         }
     }
   
@@ -213,7 +166,7 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
         guard isListening else {
             return
         }
-        
+
         micimg.isHidden = true
         cancelmicBtn.isHidden = true
         micBtn.isHidden = false
@@ -229,11 +182,9 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
         setTabBarHidden(false)
         
         //오디오 관련 멈춤
-       
         audioEngine.reset()
         audioEngine.stop()
         audioEngine.inputNode.removeTap(onBus: 0)
-        // Indicate that the audio source is finished and no more audio will be appended
         
         recognitionRequest = nil
         recognitionTask?.cancel()
@@ -263,7 +214,7 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
         activityIndicatorView.frame.size.width = 170
         activityIndicatorView.frame.size.height = 170
         activityIndicatorView.frame.origin.y = ysize - 200
-        activityIndicatorView.frame.origin.x = (xsize/2) - (170/2)
+        activityIndicatorView.frame.origin.x = (xsize / 2) - (170 / 2)
         activityIndicatorView.startAnimating()
         
         micimg.image = #imageLiteral(resourceName: "micButton")
@@ -272,7 +223,6 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
         micimg.center = activityIndicatorView.center
         micimg.isHidden = false
             
-        //애니메이션 적용 해서 네비바와 탭바 제거 후 테이블뷰 올림
         UIView.animate(withDuration: 0.2, animations: { [weak self] in
                         self?.tableview.frame.origin.y = -(ysize * 0.39)
         }, completion: nil)

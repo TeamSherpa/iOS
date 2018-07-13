@@ -13,11 +13,8 @@
 		5250773320CCD83C009EA147 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250773220CCD83C009EA147 /* extension.swift */; };
 		52A90DF120DE9465009D4FF3 /* NetworkCallBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A90DF020DE9465009D4FF3 /* NetworkCallBack.swift */; };
 		52AA2F4220C4170700BE1D31 /* MainCVTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA2F4120C4170700BE1D31 /* MainCVTableViewCell.swift */; };
-		52AA2F4420C417E300BE1D31 /* CVCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA2F4320C417E300BE1D31 /* CVCollectionViewCell.swift */; };
 		52C972B120D4D8010000988E /* SpeechNM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C972B020D4D8010000988E /* SpeechNM.swift */; };
-		52C972B320D4D8A20000988E /* SpeechVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C972B220D4D8A20000988E /* SpeechVO.swift */; };
 		52C972B620D4E4E50000988E /* SpeachStringresult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C972B520D4E4E50000988E /* SpeachStringresult.swift */; };
-		52E0CD7C20C67F00000B8489 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E0CD7B20C67F00000B8489 /* InfoViewController.swift */; };
 		52F6D61B20C0210A00245C07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F6D61A20C0210A00245C07 /* AppDelegate.swift */; };
 		52F6D62020C0210A00245C07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52F6D61E20C0210A00245C07 /* Main.storyboard */; };
 		52F6D62220C0210C00245C07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52F6D62120C0210C00245C07 /* Assets.xcassets */; };
@@ -76,11 +73,8 @@
 		5250773220CCD83C009EA147 /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 		52A90DF020DE9465009D4FF3 /* NetworkCallBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCallBack.swift; sourceTree = "<group>"; };
 		52AA2F4120C4170700BE1D31 /* MainCVTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCVTableViewCell.swift; sourceTree = "<group>"; };
-		52AA2F4320C417E300BE1D31 /* CVCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVCollectionViewCell.swift; sourceTree = "<group>"; };
 		52C972B020D4D8010000988E /* SpeechNM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechNM.swift; sourceTree = "<group>"; };
-		52C972B220D4D8A20000988E /* SpeechVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechVO.swift; sourceTree = "<group>"; };
 		52C972B520D4E4E50000988E /* SpeachStringresult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeachStringresult.swift; sourceTree = "<group>"; };
-		52E0CD7B20C67F00000B8489 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		52F6D61720C0210A00245C07 /* Sherpa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sherpa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52F6D61A20C0210A00245C07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52F6D61F20C0210A00245C07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -165,7 +159,6 @@
 			isa = PBXGroup;
 			children = (
 				52E0CD7820C67E35000B8489 /* Main */,
-				52E0CD7B20C67F00000B8489 /* InfoViewController.swift */,
 				CE89B14F20D4BE5500619841 /* Recommend */,
 				CE35BBC320D64A320068C189 /* Detail */,
 				CED9E9AF20D9613D00B261BF /* Map */,
@@ -220,7 +213,6 @@
 			isa = PBXGroup;
 			children = (
 				52C972B420D4E4C00000988E /* Realm */,
-				52C972B220D4D8A20000988E /* SpeechVO.swift */,
 				CED9E9A220D810B000B261BF /* SGISVO.swift */,
 				CED9E9A320D810B000B261BF /* WGSVO.swift */,
 				CE35BBC820D650000068C189 /* Mountain.swift */,
@@ -272,7 +264,6 @@
 				CE18F23120DC0A2D0016EC8E /* ArticleCollectionViewCell.swift */,
 				CE18F23020DC0A2D0016EC8E /* EducationCollectionViewCell.swift */,
 				52AA2F4120C4170700BE1D31 /* MainCVTableViewCell.swift */,
-				52AA2F4320C417E300BE1D31 /* CVCollectionViewCell.swift */,
 				CE8E4F6520DF4ECE00F4964E /* MountainCell.swift */,
 			);
 			path = MainBoxCell;
@@ -485,10 +476,7 @@
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -497,10 +485,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -580,16 +565,13 @@
 				CE35BBCF20D694B40068C189 /* TrailCell.swift in Sources */,
 				5250773320CCD83C009EA147 /* extension.swift in Sources */,
 				CE35BBD520D695F00068C189 /* Trail.swift in Sources */,
-				52AA2F4420C417E300BE1D31 /* CVCollectionViewCell.swift in Sources */,
 				CE35BBD720D696490068C189 /* NetworkRequestor.swift in Sources */,
 				CE89B15720D4C0FF00619841 /* RecommendModel.swift in Sources */,
 				CE18F23220DC0A2D0016EC8E /* EducationCollectionViewCell.swift in Sources */,
 				CEFFCAB320F2400700ABA240 /* LocalNotificationManager.swift in Sources */,
 				CE8E4F6620DF4ECE00F4964E /* MountainCell.swift in Sources */,
 				CED9E9BC20D96DE700B261BF /* MainViewController+UITableViewDataSource.swift in Sources */,
-				52E0CD7C20C67F00000B8489 /* InfoViewController.swift in Sources */,
 				CED9E9A820D810DB00B261BF /* SGISNM.swift in Sources */,
-				52C972B320D4D8A20000988E /* SpeechVO.swift in Sources */,
 				CE35BBC720D64C950068C189 /* DetailListViewController+UITableViewDelegate.swift in Sources */,
 				CE35BBD120D695090068C189 /* DetailMountainViewController+UICollectionViewDelegate.swift in Sources */,
 				CE962DB220DC235300B5A831 /* Education.swift in Sources */,

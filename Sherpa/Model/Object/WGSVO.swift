@@ -6,12 +6,10 @@
 //  Copyright © 2018년 신동규. All rights reserved.
 //
 
-
-
 import Foundation
 import ObjectMapper
 
-class WGSVO :Mappable{
+class WGSVO: Mappable {
     
     var id : String?
     var result : Result?
@@ -32,8 +30,8 @@ class WGSVO :Mappable{
 
 class Result: Mappable {
     
-    var posX : Float64?
-    var posY : Float64?
+    var posX: Float64?
+    var posY: Float64?
     
     required init?(map: Map) { }
     

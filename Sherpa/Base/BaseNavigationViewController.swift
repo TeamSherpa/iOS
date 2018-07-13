@@ -13,7 +13,6 @@ class BaseNavigationViewController: UINavigationController, UIGestureRecognizerD
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBar()
-        
         interactivePopGestureRecognizer?.delegate = self
     }
     

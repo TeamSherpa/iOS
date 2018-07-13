@@ -10,9 +10,7 @@ target 'Sherpa' do
     pod 'ObjectMapper'
     pod 'SwiftyJSON'
     pod 'Kingfisher'
-    pod 'Toast-Swift'
     pod 'NVActivityIndicatorView'
-    pod 'RealmSwift'
     pod 'GoogleMaps'
     pod 'GooglePlaces'
 end

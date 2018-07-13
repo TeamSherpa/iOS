@@ -10,6 +10,5 @@ import Foundation
 
 protocol NetworkCallBack{
     func networkResultData(resultData: Any, code: String)
-    
     func networkFailed(msg: Any?)
 }

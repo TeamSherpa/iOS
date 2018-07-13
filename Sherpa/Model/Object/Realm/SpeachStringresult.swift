@@ -7,9 +7,7 @@
 //
 
 import Foundation
-import Realm
-import RealmSwift
 
-class SpeechStringResult: Object {
-    @objc dynamic var stringdata : String = ""
+class SpeechStringResult {
+    var stringdata : String = ""
 }

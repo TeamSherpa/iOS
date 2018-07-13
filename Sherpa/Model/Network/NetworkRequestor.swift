@@ -14,7 +14,6 @@ enum NetworkError: Error {
     case failure
 }
 
-
 struct NetworkRequestor {
     
     private var api: APIRouter

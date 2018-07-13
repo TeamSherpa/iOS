@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension MainViewController : UITableViewDelegate {
+extension MainViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if questions.count > model.count, indexPath.row == questions.count - 1 {
