@@ -27,17 +27,6 @@ DEPENDENCIES:
   - ObjectMapper
   - SwiftyJSON
 
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - Alamofire
-    - AlamofireObjectMapper
-    - GoogleMaps
-    - GooglePlaces
-    - Kingfisher
-    - NVActivityIndicatorView
-    - ObjectMapper
-    - SwiftyJSON
-
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
   AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
@@ -50,4 +39,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 60f0b15ea00c3ef9f0d323615a8b3f413bd68776
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.4.0

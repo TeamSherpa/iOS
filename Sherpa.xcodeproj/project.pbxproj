@@ -15,6 +15,8 @@
 		52AA2F4220C4170700BE1D31 /* MainCVTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA2F4120C4170700BE1D31 /* MainCVTableViewCell.swift */; };
 		52C972B120D4D8010000988E /* SpeechNM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C972B020D4D8010000988E /* SpeechNM.swift */; };
 		52C972B620D4E4E50000988E /* SpeachStringresult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C972B520D4E4E50000988E /* SpeachStringresult.swift */; };
+		52D6DB2720FBA494002AAE71 /* getHourlyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6DB2520FBA494002AAE71 /* getHourlyWeather.swift */; };
+		52D6DB2B20FBA86C002AAE71 /* MainViewController+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6DB2A20FBA86C002AAE71 /* MainViewController+Network.swift */; };
 		52F6D61B20C0210A00245C07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F6D61A20C0210A00245C07 /* AppDelegate.swift */; };
 		52F6D62020C0210A00245C07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52F6D61E20C0210A00245C07 /* Main.storyboard */; };
 		52F6D62220C0210C00245C07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52F6D62120C0210C00245C07 /* Assets.xcassets */; };
@@ -75,6 +77,8 @@
 		52AA2F4120C4170700BE1D31 /* MainCVTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCVTableViewCell.swift; sourceTree = "<group>"; };
 		52C972B020D4D8010000988E /* SpeechNM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechNM.swift; sourceTree = "<group>"; };
 		52C972B520D4E4E50000988E /* SpeachStringresult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeachStringresult.swift; sourceTree = "<group>"; };
+		52D6DB2520FBA494002AAE71 /* getHourlyWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = getHourlyWeather.swift; sourceTree = "<group>"; };
+		52D6DB2A20FBA86C002AAE71 /* MainViewController+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Network.swift"; sourceTree = "<group>"; };
 		52F6D61720C0210A00245C07 /* Sherpa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sherpa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52F6D61A20C0210A00245C07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52F6D61F20C0210A00245C07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				52C972B420D4E4C00000988E /* Realm */,
+				52D6DB2520FBA494002AAE71 /* getHourlyWeather.swift */,
 				CED9E9A220D810B000B261BF /* SGISVO.swift */,
 				CED9E9A320D810B000B261BF /* WGSVO.swift */,
 				CE35BBC820D650000068C189 /* Mountain.swift */,
@@ -253,6 +258,7 @@
 				CED9E9BB20D96DE700B261BF /* MainViewController+UITableViewDataSource.swift */,
 				CED9E9BF20D9717C00B261BF /* MainViewController+SFSpeechRecognizerDelegate.swift */,
 				CED9E9C120D9723200B261BF /* MainViewController+UIGestureRecognizerDelegate.swift */,
+				52D6DB2A20FBA86C002AAE71 /* MainViewController+Network.swift */,
 				52E0CD7A20C67E5C000B8489 /* MainBoxCell */,
 			);
 			path = Main;
@@ -547,6 +553,7 @@
 				52A90DF120DE9465009D4FF3 /* NetworkCallBack.swift in Sources */,
 				CED9E9AB20D810ED00B261BF /* GeoConverter.swift in Sources */,
 				CE35BBD920D6969D0068C189 /* APIRouter.swift in Sources */,
+				52D6DB2B20FBA86C002AAE71 /* MainViewController+Network.swift in Sources */,
 				CE35BBDB20D6CF7E0068C189 /* DetailMountainViewController+Network.swift in Sources */,
 				521B80DB20C90489003F8833 /* RecommendViewController.swift in Sources */,
 				CED9E9BE20D9710400B261BF /* Collection+Extension.swift in Sources */,
@@ -569,6 +576,7 @@
 				CE89B15720D4C0FF00619841 /* RecommendModel.swift in Sources */,
 				CE18F23220DC0A2D0016EC8E /* EducationCollectionViewCell.swift in Sources */,
 				CEFFCAB320F2400700ABA240 /* LocalNotificationManager.swift in Sources */,
+				52D6DB2720FBA494002AAE71 /* getHourlyWeather.swift in Sources */,
 				CE8E4F6620DF4ECE00F4964E /* MountainCell.swift in Sources */,
 				CED9E9BC20D96DE700B261BF /* MainViewController+UITableViewDataSource.swift in Sources */,
 				CED9E9A820D810DB00B261BF /* SGISNM.swift in Sources */,
@@ -730,7 +738,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 78N9H93U2R;
+				DEVELOPMENT_TEAM = KB65UR5HX8;
 				INFOPLIST_FILE = "$(SRCROOT)/Sherpa/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -750,7 +758,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 78N9H93U2R;
+				DEVELOPMENT_TEAM = KB65UR5HX8;
 				INFOPLIST_FILE = "$(SRCROOT)/Sherpa/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
