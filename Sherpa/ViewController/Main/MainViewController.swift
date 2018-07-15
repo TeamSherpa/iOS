@@ -17,6 +17,11 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
     @IBOutlet weak var cancelmicBtn: UIButton!
     @IBOutlet weak var micStringLB: UILabel!
     @IBOutlet weak var recommendLabel: UILabel!
+  
+    @IBOutlet weak var minTemLB: UILabel!
+    @IBOutlet weak var maxTemLB: UILabel!
+    @IBOutlet weak var currentTemLB: UILabel!
+    @IBOutlet weak var currentweatherImg: UIImageView!
     
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "ko-KR"))
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
@@ -25,13 +30,14 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
     
     let activityIndicatorView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 20, height: 20),
                                                                   type: NVActivityIndicatorType(rawValue: 23)!)
+ 
     let micimg = UIImageView()
     var detectionTimer = Timer()
     
     var tablex: CGFloat = 0
     var tabley: CGFloat = 0
     var isListening: Bool = false
-    
+    var getweather : WeatherMeta?
     var model = [[ModelTransformable]]() {
         didSet {
             tableview.reloadData()
@@ -41,15 +47,31 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
     var category = [Category?]()
     var questions = [String?]() {
         didSet {
+            
             tableview.reloadData()
         }
     }
+    
+    let wheatherimage : [String:UIImage] = ["SKY_O01": #imageLiteral(resourceName: "clearIcon.png"),"SKY_O02":#imageLiteral(resourceName: "cloudyIcon.png"),"SKY_O03":#imageLiteral(resourceName: "cloudyIcon.png"),"SKY_O04": #imageLiteral(resourceName: "rainyIcon.png"),"SKY_O05":#imageLiteral(resourceName: "snowyIcon.png") ,"SKY_O06": #imageLiteral(resourceName: "rainyIcon.png") ,"SKY_O07": #imageLiteral(resourceName: "cloudyIcon.png") ,"SKY_O08":#imageLiteral(resourceName: "rainyIcon.png"), "SKY_O09":#imageLiteral(resourceName: "snowyIcon.png"), "SKY_O10":#imageLiteral(resourceName: "rainyIcon.png") , "SKY_O11":#imageLiteral(resourceName: "thunderIcon.png"),"SKY_O12":#imageLiteral(resourceName: "thunderIcon.png"),"SKY_O13":#imageLiteral(resourceName: "thunderIcon.png"),"SKY_O14":#imageLiteral(resourceName: "thunderIcon.png")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         speechRecognizer?.delegate = self
         updateUI()
         addGesture()
+        requestHourlyWeather(city: "서울", county: "도봉구", village: "도봉동") { [weak self](weather) in
+       
+       
+            var min = weather?.tempMin?.components(separatedBy: ".")
+            var max = weather?.tempMax?.components(separatedBy: ".")
+            var current = weather?.tempNow?.components(separatedBy: ".")
+            self?.currentweatherImg.image = self?.wheatherimage[(weather?.skyCode)!]
+            self?.minTemLB.text = min![0] + "˚"
+            self?.maxTemLB.text = max![0] + "˚"
+            self?.currentTemLB.text = current![0] + "˚"
+            
+
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -119,15 +141,18 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
                         self.questions.append(self.micStringLB.text)
                         speechNetwork.sendSpeech(string: self.micStringLB.text ?? "") { category, model, error in
                             guard error == nil else {
+                                self.ttsResultFail(speechdata: self.micStringLB.text!)
                                 self.category.append(.none)
                                 self.model.append([])
                                 return
                             }
                             guard let model = model, let category = category else {
+                                self.ttsResultFail(speechdata: self.micStringLB.text!)
                                 self.category.append(.none)
                                 self.model.append([])
                                 return
                             }
+                             self.ttsResultSuccess(speechdata: self.micStringLB.text!)
                             self.category.append(category)
                             self.model.append(model)
                         }
@@ -166,6 +191,16 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
         guard isListening else {
             return
         }
+        
+        //오디오 관련 멈춤
+        audioEngine.reset()
+        audioEngine.stop()
+        audioEngine.inputNode.removeTap(onBus: 0)
+        
+        recognitionRequest = nil
+        recognitionTask?.cancel()
+        recognitionTask = nil
+        recognitionRequest?.endAudio()
 
         micimg.isHidden = true
         cancelmicBtn.isHidden = true
@@ -181,17 +216,28 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
         navigationController?.setNavigationBarHidden(false, animated: true)
         setTabBarHidden(false)
         
-        //오디오 관련 멈춤
-        audioEngine.reset()
-        audioEngine.stop()
-        audioEngine.inputNode.removeTap(onBus: 0)
-        
-        recognitionRequest = nil
-        recognitionTask?.cancel()
-        recognitionTask = nil
-        recognitionRequest?.endAudio()
+       
     
         isListening = false
+    }
+    
+    func ttsResultSuccess(speechdata : String) {
+        let synthesizer = AVSpeechSynthesizer()
+        let utterance = AVSpeechUtterance(string: speechdata + "에 대한결과입니다.")
+        utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
+        utterance.rate = 0.4
+        synthesizer.speak(utterance)
+        
+    }
+    
+    
+    func ttsResultFail(speechdata : String) {
+        let synthesizer = AVSpeechSynthesizer()
+        let utterance = AVSpeechUtterance(string: speechdata + "에 대한결과가 없습니다.")
+        utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
+        utterance.rate = 0.4
+        synthesizer.speak(utterance)
+        
     }
     
     @IBAction func cancelmicAction(_ sender: Any) {
