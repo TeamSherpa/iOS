@@ -51,6 +51,8 @@
 		CE962DB220DC235300B5A831 /* Education.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE962DB120DC235300B5A831 /* Education.swift */; };
 		CEB2C17820FF5C29005DF446 /* getHourlyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB2C17720FF5C25005DF446 /* getHourlyWeather.swift */; };
 		CEB2C17A20FF5CAD005DF446 /* MainViewController+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB2C17920FF5CAD005DF446 /* MainViewController+Network.swift */; };
+		CEB2C17E20FF6EA3005DF446 /* MountainInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEB2C17D20FF6EA3005DF446 /* MountainInfoCell.xib */; };
+		CEB2C18020FF6F1F005DF446 /* MountainInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB2C17F20FF6F1F005DF446 /* MountainInfoCell.swift */; };
 		CED9E9A420D810B000B261BF /* SGISVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9A220D810B000B261BF /* SGISVO.swift */; };
 		CED9E9A520D810B000B261BF /* WGSVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9A320D810B000B261BF /* WGSVO.swift */; };
 		CED9E9A820D810DB00B261BF /* SGISNM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9A620D810DB00B261BF /* SGISNM.swift */; };
@@ -135,6 +137,8 @@
 		CE962DB120DC235300B5A831 /* Education.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Education.swift; sourceTree = "<group>"; };
 		CEB2C17720FF5C25005DF446 /* getHourlyWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = getHourlyWeather.swift; sourceTree = "<group>"; };
 		CEB2C17920FF5CAD005DF446 /* MainViewController+Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainViewController+Network.swift"; sourceTree = "<group>"; };
+		CEB2C17D20FF6EA3005DF446 /* MountainInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MountainInfoCell.xib; sourceTree = "<group>"; };
+		CEB2C17F20FF6F1F005DF446 /* MountainInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainInfoCell.swift; sourceTree = "<group>"; };
 		CED9E9A220D810B000B261BF /* SGISVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGISVO.swift; sourceTree = "<group>"; };
 		CED9E9A320D810B000B261BF /* WGSVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WGSVO.swift; sourceTree = "<group>"; };
 		CED9E9A620D810DB00B261BF /* SGISNM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGISNM.swift; sourceTree = "<group>"; };
@@ -242,6 +246,7 @@
 				CE8E4F6320DF4E7900F4964E /* MountainCell.xib */,
 				CEEEC5BD20F9CEEC004DC4F0 /* TrafficCell.xib */,
 				CE21AC8020FED5B700A7555E /* LocalCell.xib */,
+				CEB2C17D20FF6EA3005DF446 /* MountainInfoCell.xib */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -337,6 +342,7 @@
 				CE8E4F6520DF4ECE00F4964E /* MountainCell.swift */,
 				CEEEC5BF20F9CF5E004DC4F0 /* TrafficCell.swift */,
 				CE21AC8220FED5E300A7555E /* LocalCell.swift */,
+				CEB2C17F20FF6F1F005DF446 /* MountainInfoCell.swift */,
 			);
 			path = MainBoxCell;
 			sourceTree = "<group>";
@@ -579,6 +585,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEEEC61D20F9E65D004DC4F0 /* poweredby.png in Resources */,
+				CEB2C17E20FF6EA3005DF446 /* MountainInfoCell.xib in Resources */,
 				CEEEC61B20F9E65D004DC4F0 /* HeadingAngleSmall@2x.png in Resources */,
 				CEEEC61F20F9E65D004DC4F0 /* mapbg_tlogo@2x.png in Resources */,
 				52F6D62520C0210C00245C07 /* LaunchScreen.storyboard in Resources */,
@@ -734,6 +741,7 @@
 				CEEEC5C020F9CF5E004DC4F0 /* TrafficCell.swift in Sources */,
 				CE18F23920DC1DD60016EC8E /* Date+Extension.swift in Sources */,
 				CED9E9C420D97AA400B261BF /* Category.swift in Sources */,
+				CEB2C18020FF6F1F005DF446 /* MountainInfoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

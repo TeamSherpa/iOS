@@ -17,9 +17,10 @@ enum Category: String {
     case local
     case traffic
     case weather
+    case info
     
     static var allValues: [Category] {
-        return [.none, .news, .mountain, .education, .trail, .weather, .local, .traffic]
+        return [.none, .news, .mountain, .education, .trail, .weather, .local, .traffic, .info]
     }
     
     var cellIdentifier: String {
@@ -29,6 +30,7 @@ enum Category: String {
         case .mountain: return "MountainCell"
         case .local: return "LocalCell"
         case .traffic: return "TrafficCell"
+        case .info: return "MountainInfoCell"
         default: return ""
         }
     }

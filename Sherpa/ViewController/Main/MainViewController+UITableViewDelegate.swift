@@ -20,6 +20,7 @@ extension MainViewController: UITableViewDelegate {
             case .news, .mountain: return 300
             case .traffic: return 300
             case .local: return 190
+            case .info: return 180
             default: return 48
             }
         }

@@ -54,6 +54,9 @@ class SpeechNM {
                 case .local:
                     let result = try JSONDecoder().decode([Local].self, from: jsonData)
                     completion(.local, result, nil)
+                case .info:
+                    let result = try JSONDecoder().decode(Mountain.self, from: jsonData)
+                    completion(.info, [result], nil)
                 default:
                     break
                 }

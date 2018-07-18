@@ -29,14 +29,22 @@ class MainCVTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setDelegate()
+        registerCell()
+    }
+    
+    func setDelegate() {
         orderCV.delegate = self
         orderCV.dataSource = self
-        
+    }
+    
+    func registerCell() {
         orderCV.register(UINib(nibName: "ArticleCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "ArticleCollectionViewCell")
         orderCV.register(UINib(nibName: "EducationCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "EducationCollectionViewCell")
         orderCV.register(UINib(nibName: "MountainCell", bundle: .main), forCellWithReuseIdentifier: "MountainCell")
         orderCV.register(UINib(nibName: "TrafficCell", bundle: .main), forCellWithReuseIdentifier: "TrafficCell")
         orderCV.register(UINib(nibName: "LocalCell", bundle: .main), forCellWithReuseIdentifier: "LocalCell")
+        orderCV.register(UINib(nibName: "MountainInfoCell", bundle: .main), forCellWithReuseIdentifier: "MountainInfoCell")
     }
 }
 
@@ -62,6 +70,10 @@ extension MainCVTableViewCell: UICollectionViewDelegateFlowLayout {
             resultCollectionViewHeightConstraint.constant = 123
             layoutIfNeeded()
             return CGSize(width: 180, height: 110)
+        case .info:
+            resultCollectionViewHeightConstraint.constant = 113
+            layoutIfNeeded()
+            return CGSize(width: UIScreen.main.bounds.width - 30, height: 100)
         default:
             return .zero
         }
