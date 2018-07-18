@@ -48,6 +48,12 @@ class SpeechNM {
                     break
                 case .weather:
                     break
+                case .traffic:
+                    let result = try JSONDecoder().decode([MountainLocation].self, from: jsonData)
+                    completion(.traffic, result, nil)
+                case .local:
+                    let result = try JSONDecoder().decode([Local].self, from: jsonData)
+                    completion(.local, result, nil)
                 default:
                     break
                 }

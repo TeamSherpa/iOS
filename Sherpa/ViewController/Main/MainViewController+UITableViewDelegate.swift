@@ -18,6 +18,8 @@ extension MainViewController: UITableViewDelegate {
             switch category {
             case .education: return 228
             case .news, .mountain: return 300
+            case .traffic: return 300
+            case .local: return 190
             default: return 48
             }
         }

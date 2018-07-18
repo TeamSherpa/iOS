@@ -10,6 +10,7 @@ import Alamofire
 
 struct APIConfiguration {
     static let baseURL = "http://52.78.104.4:8080"
+    static let tmapKey = "0a6a4a4c-e1ce-4016-9795-5608455ad7b3"
 }
 
 struct APIRouter {

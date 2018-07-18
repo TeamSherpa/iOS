@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LocalCell" customModule="Sherpa" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="180" height="110"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="청계산 묵밥&amp;막걸리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FoW-Ns-FQz">
+                    <rect key="frame" x="27.5" y="15" width="125.5" height="19.5"/>
+                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="청계산청계산청계산청계산청계산청계산청계산청계산청계산청계산청계산산" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHI-tX-ZcZ">
+                    <rect key="frame" x="8" y="44.5" width="164" height="26.5"/>
+                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="11"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="AhZ-zY-4xC">
+                    <rect key="frame" x="51.5" y="81" width="77.5" height="13.5"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tellIcon" translatesAutoresizingMaskIntoConstraints="NO" id="2sL-Wr-ems">
+                            <rect key="frame" x="0.0" y="0.0" width="11" height="13.5"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02-1233-1233" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="800-zj-TmL">
+                            <rect key="frame" x="12" y="0.0" width="65.5" height="13.5"/>
+                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="11"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="0.89411764705882346" green="0.96078431372549022" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="eHI-tX-ZcZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="HeL-Zd-ajy"/>
+                <constraint firstItem="FoW-Ns-FQz" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="15" id="Jmt-Wj-Is3"/>
+                <constraint firstItem="AhZ-zY-4xC" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Qs7-Up-d7K"/>
+                <constraint firstItem="FoW-Ns-FQz" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Rrp-FT-y49"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="eHI-tX-ZcZ" secondAttribute="trailing" constant="8" id="SoT-9I-jia"/>
+                <constraint firstItem="eHI-tX-ZcZ" firstAttribute="top" secondItem="FoW-Ns-FQz" secondAttribute="bottom" constant="10" id="Tgl-7V-AdI"/>
+                <constraint firstItem="AhZ-zY-4xC" firstAttribute="top" secondItem="eHI-tX-ZcZ" secondAttribute="bottom" constant="10" id="kCx-ZX-AYB"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="eHI-tX-ZcZ" id="MCB-l2-2Op"/>
+                <outlet property="telephoneLabel" destination="800-zj-TmL" id="DWk-Sn-gIj"/>
+                <outlet property="titleLabel" destination="FoW-Ns-FQz" id="jHP-4j-SSS"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="tellIcon" width="11" height="12"/>
+    </resources>
+</document>

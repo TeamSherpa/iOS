@@ -35,6 +35,8 @@ class MainCVTableViewCell: UITableViewCell {
         orderCV.register(UINib(nibName: "ArticleCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "ArticleCollectionViewCell")
         orderCV.register(UINib(nibName: "EducationCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "EducationCollectionViewCell")
         orderCV.register(UINib(nibName: "MountainCell", bundle: .main), forCellWithReuseIdentifier: "MountainCell")
+        orderCV.register(UINib(nibName: "TrafficCell", bundle: .main), forCellWithReuseIdentifier: "TrafficCell")
+        orderCV.register(UINib(nibName: "LocalCell", bundle: .main), forCellWithReuseIdentifier: "LocalCell")
     }
 }
 
@@ -52,6 +54,14 @@ extension MainCVTableViewCell: UICollectionViewDelegateFlowLayout {
             resultCollectionViewHeightConstraint.constant = 253
             layoutIfNeeded()
             return CGSize(width: 170, height: 220)
+        case .traffic:
+            resultCollectionViewHeightConstraint.constant = 240
+            layoutIfNeeded()
+            return CGSize(width: UIScreen.main.bounds.width - 30, height: 210)
+        case .local:
+            resultCollectionViewHeightConstraint.constant = 123
+            layoutIfNeeded()
+            return CGSize(width: 180, height: 110)
         default:
             return .zero
         }
@@ -91,6 +101,3 @@ extension MainCVTableViewCell: UICollectionViewDataSource {
         return cell as! UICollectionViewCell
     }
 }
-
-
-
