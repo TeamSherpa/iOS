@@ -47,12 +47,11 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
     var category = [Category?]()
     var questions = [String?]() {
         didSet {
-            
             tableview.reloadData()
         }
     }
     
-    let wheatherimage: [String: UIImage] = ["SKY_O01": #imageLiteral(resourceName: "clearIcon.png"), "SKY_O02": #imageLiteral(resourceName: "cloudyIcon.png"), "SKY_O03": #imageLiteral(resourceName: "cloudyIcon.png"), "SKY_O04": #imageLiteral(resourceName: "rainyIcon.png"), "SKY_O05": #imageLiteral(resourceName: "snowyIcon.png"), "SKY_O06": #imageLiteral(resourceName: "rainyIcon.png"), "SKY_O07": #imageLiteral(resourceName: "cloudyIcon.png"), "SKY_O08": #imageLiteral(resourceName: "rainyIcon.png"), "SKY_O09": #imageLiteral(resourceName: "snowyIcon.png"), "SKY_O10": #imageLiteral(resourceName: "rainyIcon.png"), "SKY_O11": #imageLiteral(resourceName: "thunderIcon.png"), "SKY_O12": #imageLiteral(resourceName: "thunderIcon.png"), "SKY_O13": #imageLiteral(resourceName: "thunderIcon.png"), "SKY_O14": #imageLiteral(resourceName: "thunderIcon.png")]
+    let weatherImage: [String: UIImage] = ["SKY_O01": #imageLiteral(resourceName: "clearIcon.png"), "SKY_O02": #imageLiteral(resourceName: "cloudyIcon.png"), "SKY_O03": #imageLiteral(resourceName: "cloudyIcon.png"), "SKY_O04": #imageLiteral(resourceName: "rainyIcon.png"), "SKY_O05": #imageLiteral(resourceName: "snowyIcon.png"), "SKY_O06": #imageLiteral(resourceName: "rainyIcon.png"), "SKY_O07": #imageLiteral(resourceName: "cloudyIcon.png"), "SKY_O08": #imageLiteral(resourceName: "rainyIcon.png"), "SKY_O09": #imageLiteral(resourceName: "snowyIcon.png"), "SKY_O10": #imageLiteral(resourceName: "rainyIcon.png"), "SKY_O11": #imageLiteral(resourceName: "thunderIcon.png"), "SKY_O12": #imageLiteral(resourceName: "thunderIcon.png"), "SKY_O13": #imageLiteral(resourceName: "thunderIcon.png"), "SKY_O14": #imageLiteral(resourceName: "thunderIcon.png")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +62,7 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
             var min = weather?.tempMin?.components(separatedBy: ".")
             var max = weather?.tempMax?.components(separatedBy: ".")
             var current = weather?.tempNow?.components(separatedBy: ".")
-            self?.currentweatherImg.image = self?.wheatherimage[(weather?.skyCode)!]
+            self?.currentweatherImg.image = self?.weatherImage[(weather?.skyCode)!]
             self?.minTemLB.text = min![0] + "˚"
             self?.maxTemLB.text = max![0] + "˚"
             self?.currentTemLB.text = current![0] + "˚"
@@ -212,8 +211,6 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
         navigationController?.setNavigationBarHidden(false, animated: true)
         setTabBarHidden(false)
         
-       
-    
         isListening = false
     }
     
@@ -223,7 +220,6 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
         utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
         utterance.rate = 0.4
         synthesizer.speak(utterance)
-        
     }
     
     
@@ -233,7 +229,6 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
         utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
         utterance.rate = 0.4
         synthesizer.speak(utterance)
-        
     }
     
     @IBAction func cancelmicAction(_ sender: Any) {

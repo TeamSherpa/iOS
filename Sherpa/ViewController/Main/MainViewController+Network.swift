@@ -9,12 +9,9 @@
 
 
 extension MainViewController{
-
    
     func requestHourlyWeather(city:String,county:String, village: String ,completion: @escaping (WeatherMeta?) -> Void) {
-        
-        let parameters = ["city":city,"county":county,"village":village]
-     
+        let parameters = ["city": city,"county": county,"village": village]
         let router = APIRouter(url:"/getHourlyWeather", method: .get, parameters: parameters)
         NetworkRequestor(with: router).request { (mountains: WeatherMeta?, error) in
             guard error == nil else {
@@ -24,6 +21,4 @@ extension MainViewController{
             completion(mountains)
         }
     }
-    
-
 }

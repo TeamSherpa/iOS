@@ -40,12 +40,9 @@ class TrailCell: UICollectionViewCell {
     
     var position: [Result?]? {
         didSet {
-            
             map?.clear()
-        
             let cameraPosition = position?.compactMap { $0 }.first
             map?.camera = GMSCameraPosition.camera(withLatitude: cameraPosition?.posY ?? 0, longitude: cameraPosition?.posX ?? 0, zoom: 13)
-            
             drawPath(position: position)
         }
     }
