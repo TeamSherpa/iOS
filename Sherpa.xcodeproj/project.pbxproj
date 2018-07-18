@@ -15,8 +15,6 @@
 		52AA2F4220C4170700BE1D31 /* MainCVTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA2F4120C4170700BE1D31 /* MainCVTableViewCell.swift */; };
 		52C972B120D4D8010000988E /* SpeechNM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C972B020D4D8010000988E /* SpeechNM.swift */; };
 		52C972B620D4E4E50000988E /* SpeachStringresult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C972B520D4E4E50000988E /* SpeachStringresult.swift */; };
-		52D6DB2720FBA494002AAE71 /* getHourlyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6DB2520FBA494002AAE71 /* getHourlyWeather.swift */; };
-		52D6DB2B20FBA86C002AAE71 /* MainViewController+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6DB2A20FBA86C002AAE71 /* MainViewController+Network.swift */; };
 		52F6D61B20C0210A00245C07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F6D61A20C0210A00245C07 /* AppDelegate.swift */; };
 		52F6D62020C0210A00245C07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52F6D61E20C0210A00245C07 /* Main.storyboard */; };
 		52F6D62220C0210C00245C07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52F6D62120C0210C00245C07 /* Assets.xcassets */; };
@@ -51,6 +49,8 @@
 		CE8E4F6420DF4E7900F4964E /* MountainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8E4F6320DF4E7900F4964E /* MountainCell.xib */; };
 		CE8E4F6620DF4ECE00F4964E /* MountainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E4F6520DF4ECE00F4964E /* MountainCell.swift */; };
 		CE962DB220DC235300B5A831 /* Education.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE962DB120DC235300B5A831 /* Education.swift */; };
+		CEB2C17820FF5C29005DF446 /* getHourlyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB2C17720FF5C25005DF446 /* getHourlyWeather.swift */; };
+		CEB2C17A20FF5CAD005DF446 /* MainViewController+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB2C17920FF5CAD005DF446 /* MainViewController+Network.swift */; };
 		CED9E9A420D810B000B261BF /* SGISVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9A220D810B000B261BF /* SGISVO.swift */; };
 		CED9E9A520D810B000B261BF /* WGSVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9A320D810B000B261BF /* WGSVO.swift */; };
 		CED9E9A820D810DB00B261BF /* SGISNM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9A620D810DB00B261BF /* SGISNM.swift */; };
@@ -96,8 +96,6 @@
 		52AA2F4120C4170700BE1D31 /* MainCVTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCVTableViewCell.swift; sourceTree = "<group>"; };
 		52C972B020D4D8010000988E /* SpeechNM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechNM.swift; sourceTree = "<group>"; };
 		52C972B520D4E4E50000988E /* SpeachStringresult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeachStringresult.swift; sourceTree = "<group>"; };
-		52D6DB2520FBA494002AAE71 /* getHourlyWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = getHourlyWeather.swift; sourceTree = "<group>"; };
-		52D6DB2A20FBA86C002AAE71 /* MainViewController+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Network.swift"; sourceTree = "<group>"; };
 		52F6D61720C0210A00245C07 /* Sherpa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sherpa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52F6D61A20C0210A00245C07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52F6D61F20C0210A00245C07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -135,6 +133,8 @@
 		CE8E4F6320DF4E7900F4964E /* MountainCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MountainCell.xib; sourceTree = "<group>"; };
 		CE8E4F6520DF4ECE00F4964E /* MountainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainCell.swift; sourceTree = "<group>"; };
 		CE962DB120DC235300B5A831 /* Education.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Education.swift; sourceTree = "<group>"; };
+		CEB2C17720FF5C25005DF446 /* getHourlyWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = getHourlyWeather.swift; sourceTree = "<group>"; };
+		CEB2C17920FF5CAD005DF446 /* MainViewController+Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainViewController+Network.swift"; sourceTree = "<group>"; };
 		CED9E9A220D810B000B261BF /* SGISVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGISVO.swift; sourceTree = "<group>"; };
 		CED9E9A320D810B000B261BF /* WGSVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WGSVO.swift; sourceTree = "<group>"; };
 		CED9E9A620D810DB00B261BF /* SGISNM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGISNM.swift; sourceTree = "<group>"; };
@@ -279,10 +279,10 @@
 			isa = PBXGroup;
 			children = (
 				52C972B420D4E4C00000988E /* Realm */,
-				52D6DB2520FBA494002AAE71 /* getHourlyWeather.swift */,
 				CED9E9A220D810B000B261BF /* SGISVO.swift */,
 				CED9E9A320D810B000B261BF /* WGSVO.swift */,
 				CE35BBC820D650000068C189 /* Mountain.swift */,
+				CEB2C17720FF5C25005DF446 /* getHourlyWeather.swift */,
 				CE35BBD420D695F00068C189 /* Trail.swift */,
 				CED9E9C320D97AA400B261BF /* Category.swift */,
 				CE18F23420DC0D100016EC8E /* Article.swift */,
@@ -322,7 +322,7 @@
 				CED9E9BB20D96DE700B261BF /* MainViewController+UITableViewDataSource.swift */,
 				CED9E9BF20D9717C00B261BF /* MainViewController+SFSpeechRecognizerDelegate.swift */,
 				CED9E9C120D9723200B261BF /* MainViewController+UIGestureRecognizerDelegate.swift */,
-				52D6DB2A20FBA86C002AAE71 /* MainViewController+Network.swift */,
+				CEB2C17920FF5CAD005DF446 /* MainViewController+Network.swift */,
 				52E0CD7A20C67E5C000B8489 /* MainBoxCell */,
 			);
 			path = Main;
@@ -691,7 +691,6 @@
 				CE21AC8320FED5E300A7555E /* LocalCell.swift in Sources */,
 				CED9E9AB20D810ED00B261BF /* GeoConverter.swift in Sources */,
 				CE35BBD920D6969D0068C189 /* APIRouter.swift in Sources */,
-				52D6DB2B20FBA86C002AAE71 /* MainViewController+Network.swift in Sources */,
 				CE35BBDB20D6CF7E0068C189 /* DetailMountainViewController+Network.swift in Sources */,
 				521B80DB20C90489003F8833 /* RecommendViewController.swift in Sources */,
 				CED9E9BE20D9710400B261BF /* Collection+Extension.swift in Sources */,
@@ -701,6 +700,7 @@
 				CE35BBC520D64BED0068C189 /* DetailListCell.swift in Sources */,
 				CED9E9A920D810DB00B261BF /* GetWGSNM.swift in Sources */,
 				CE35BBC220D4B8EE0068C189 /* BaseNavigationViewController.swift in Sources */,
+				CEB2C17820FF5C29005DF446 /* getHourlyWeather.swift in Sources */,
 				CE35BBCB20D659CF0068C189 /* DetailListViewController+Network.swift in Sources */,
 				52AA2F4220C4170700BE1D31 /* MainCVTableViewCell.swift in Sources */,
 				CED9E9BA20D96DD300B261BF /* MainViewController+UITableViewDelegate.swift in Sources */,
@@ -715,7 +715,6 @@
 				CE18F23220DC0A2D0016EC8E /* EducationCollectionViewCell.swift in Sources */,
 				CEFFCAB320F2400700ABA240 /* LocalNotificationManager.swift in Sources */,
 				CEEEC5C220F9CF92004DC4F0 /* Location.swift in Sources */,
-				52D6DB2720FBA494002AAE71 /* getHourlyWeather.swift in Sources */,
 				CE8E4F6620DF4ECE00F4964E /* MountainCell.swift in Sources */,
 				CED9E9BC20D96DE700B261BF /* MainViewController+UITableViewDataSource.swift in Sources */,
 				CED9E9A820D810DB00B261BF /* SGISNM.swift in Sources */,
@@ -723,6 +722,7 @@
 				CE35BBD120D695090068C189 /* DetailMountainViewController+UICollectionViewDelegate.swift in Sources */,
 				CE962DB220DC235300B5A831 /* Education.swift in Sources */,
 				521B80DD20C938E2003F8833 /* MainViewController.swift in Sources */,
+				CEB2C17A20FF5CAD005DF446 /* MainViewController+Network.swift in Sources */,
 				CE21AC8520FED5F500A7555E /* Local.swift in Sources */,
 				CED9E9C020D9717C00B261BF /* MainViewController+SFSpeechRecognizerDelegate.swift in Sources */,
 				CEFFCAB520F240E100ABA240 /* RecommendMountainList.swift in Sources */,
@@ -880,7 +880,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KB65UR5HX8;
+				DEVELOPMENT_TEAM = 78N9H93U2R;
 				INFOPLIST_FILE = "$(SRCROOT)/Sherpa/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -908,7 +908,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KB65UR5HX8;
+				DEVELOPMENT_TEAM = 78N9H93U2R;
 				INFOPLIST_FILE = "$(SRCROOT)/Sherpa/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

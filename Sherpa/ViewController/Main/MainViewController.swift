@@ -52,16 +52,14 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
         }
     }
     
-    let wheatherimage : [String:UIImage] = ["SKY_O01": #imageLiteral(resourceName: "clearIcon.png"),"SKY_O02":#imageLiteral(resourceName: "cloudyIcon.png"),"SKY_O03":#imageLiteral(resourceName: "cloudyIcon.png"),"SKY_O04": #imageLiteral(resourceName: "rainyIcon.png"),"SKY_O05":#imageLiteral(resourceName: "snowyIcon.png") ,"SKY_O06": #imageLiteral(resourceName: "rainyIcon.png") ,"SKY_O07": #imageLiteral(resourceName: "cloudyIcon.png") ,"SKY_O08":#imageLiteral(resourceName: "rainyIcon.png"), "SKY_O09":#imageLiteral(resourceName: "snowyIcon.png"), "SKY_O10":#imageLiteral(resourceName: "rainyIcon.png") , "SKY_O11":#imageLiteral(resourceName: "thunderIcon.png"),"SKY_O12":#imageLiteral(resourceName: "thunderIcon.png"),"SKY_O13":#imageLiteral(resourceName: "thunderIcon.png"),"SKY_O14":#imageLiteral(resourceName: "thunderIcon.png")]
+    let wheatherimage: [String: UIImage] = ["SKY_O01": #imageLiteral(resourceName: "clearIcon.png"), "SKY_O02": #imageLiteral(resourceName: "cloudyIcon.png"), "SKY_O03": #imageLiteral(resourceName: "cloudyIcon.png"), "SKY_O04": #imageLiteral(resourceName: "rainyIcon.png"), "SKY_O05": #imageLiteral(resourceName: "snowyIcon.png"), "SKY_O06": #imageLiteral(resourceName: "rainyIcon.png"), "SKY_O07": #imageLiteral(resourceName: "cloudyIcon.png"), "SKY_O08": #imageLiteral(resourceName: "rainyIcon.png"), "SKY_O09": #imageLiteral(resourceName: "snowyIcon.png"), "SKY_O10": #imageLiteral(resourceName: "rainyIcon.png"), "SKY_O11": #imageLiteral(resourceName: "thunderIcon.png"), "SKY_O12": #imageLiteral(resourceName: "thunderIcon.png"), "SKY_O13": #imageLiteral(resourceName: "thunderIcon.png"), "SKY_O14": #imageLiteral(resourceName: "thunderIcon.png")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         speechRecognizer?.delegate = self
         updateUI()
         addGesture()
-        requestHourlyWeather(city: "서울", county: "도봉구", village: "도봉동") { [weak self](weather) in
-       
-       
+        requestHourlyWeather(city: "서울", county: "도봉구", village: "도봉동") { [weak self] weather in
             var min = weather?.tempMin?.components(separatedBy: ".")
             var max = weather?.tempMax?.components(separatedBy: ".")
             var current = weather?.tempNow?.components(separatedBy: ".")
@@ -69,8 +67,6 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
             self?.minTemLB.text = min![0] + "˚"
             self?.maxTemLB.text = max![0] + "˚"
             self?.currentTemLB.text = current![0] + "˚"
-            
-
         }
     }
     
