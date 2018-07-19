@@ -17,11 +17,12 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
     @IBOutlet weak var cancelmicBtn: UIButton!
     @IBOutlet weak var micStringLB: UILabel!
     @IBOutlet weak var recommendLabel: UILabel!
-  
     @IBOutlet weak var minTemLB: UILabel!
     @IBOutlet weak var maxTemLB: UILabel!
     @IBOutlet weak var currentTemLB: UILabel!
     @IBOutlet weak var currentweatherImg: UIImageView!
+    @IBOutlet weak var mountainNameLB: UILabel!
+    @IBOutlet weak var addressLB: UILabel!
     
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "ko-KR"))
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
@@ -33,7 +34,7 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
  
     let micimg = UIImageView()
     var detectionTimer = Timer()
-    
+    let randomMountain = RecommendMountains.acquire()
     var tablex: CGFloat = 0
     var tabley: CGFloat = 0
     var isListening: Bool = false
@@ -58,14 +59,29 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
         speechRecognizer?.delegate = self
         updateUI()
         addGesture()
-        requestHourlyWeather(city: "서울", county: "도봉구", village: "도봉동") { [weak self] weather in
-            var min = weather?.tempMin?.components(separatedBy: ".")
-            var max = weather?.tempMax?.components(separatedBy: ".")
-            var current = weather?.tempNow?.components(separatedBy: ".")
-            self?.currentweatherImg.image = self?.weatherImage[(weather?.skyCode)!]
-            self?.minTemLB.text = min![0] + "˚"
-            self?.maxTemLB.text = max![0] + "˚"
-            self?.currentTemLB.text = current![0] + "˚"
+       
+        requestHourlyWeather(city: gsno(randomMountain?.city), county: gsno(randomMountain?.county), village: gsno(randomMountain?.country)) { [weak self](weather) in
+            
+            if weather != nil{
+                
+                var min = weather?.tempMin?.components(separatedBy: ".")
+                var max = weather?.tempMax?.components(separatedBy: ".")
+                var current = weather?.tempNow?.components(separatedBy: ".")
+                let  city : String = (self?.randomMountain?.city)!
+                let  county : String = (self?.randomMountain?.county)!
+                let  country : String = (self?.randomMountain?.country)!
+                
+                self?.addressLB.text = city + " " + county + " " + country
+                self?.mountainNameLB.text = self?.gsno(self?.randomMountain?.name)
+                self?.currentweatherImg.image = self?.weatherImage[(weather?.skyCode)!]
+                self?.minTemLB.text = min![0] + "˚"
+                self?.maxTemLB.text = max![0] + "˚"
+                self?.currentTemLB.text = current![0] + "˚"
+            }
+            else{
+                print("값이 없습니다.")
+            }
+            
         }
     }
     
