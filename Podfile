@@ -9,7 +9,7 @@ target 'Sherpa' do
     pod 'AlamofireObjectMapper'
     pod 'ObjectMapper'
     pod 'SwiftyJSON'
-    pod 'Kingfisher'
+    pod 'Kingfisher', '4.6.3'
     pod 'NVActivityIndicatorView'
     pod 'GoogleMaps'
     pod 'GooglePlaces'
