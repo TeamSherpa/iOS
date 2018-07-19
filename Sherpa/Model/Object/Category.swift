@@ -26,6 +26,7 @@ enum Category: String {
     
     var cellIdentifier: String {
         switch self {
+        case .none: return "ResultFailCell"
         case .education: return "EducationCollectionViewCell"
         case .news: return "ArticleCollectionViewCell"
         case .mountain: return "MountainCell"

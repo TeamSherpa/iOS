@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="NcZ-Vj-Pxb" customClass="ResultFailCell" customModule="Sherpa" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="검색결과를 찾지 못했어요. :'(" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Sc-oj-rld">
+                    <rect key="frame" x="85.5" y="18" width="204.5" height="22"/>
+                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
+                    <color key="textColor" red="0.0" green="0.27450980392156865" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qd0-0B-aCV">
+                    <rect key="frame" x="66" y="60" width="244" height="22"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HpG-O6-RDE">
+                            <rect key="frame" x="0.0" y="0.0" width="168.5" height="22"/>
+                            <attributedString key="attributedText">
+                                <fragment content="&quot;청계산 가는 길 알려줘&quot;">
+                                    <attributes>
+                                        <color key="NSColor" red="0.0" green="0.27450980390000002" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <font key="NSFont" size="18" name="AppleSDGothicNeo-Bold"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="는 어때요?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBC-Rm-Zxh">
+                            <rect key="frame" x="168.5" y="0.0" width="75.5" height="22"/>
+                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
+                            <color key="textColor" red="0.0" green="0.27450980390000002" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="0.89411764705882346" green="0.96078431372549022" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="Qd0-0B-aCV" firstAttribute="top" secondItem="3Sc-oj-rld" secondAttribute="bottom" constant="20" id="C32-mq-1EE"/>
+                <constraint firstItem="3Sc-oj-rld" firstAttribute="top" secondItem="pgb-UC-ag5" secondAttribute="top" constant="18" id="Dpf-EA-RmU"/>
+                <constraint firstItem="Qd0-0B-aCV" firstAttribute="centerX" secondItem="3Sc-oj-rld" secondAttribute="centerX" id="HJf-Xd-7aX"/>
+                <constraint firstItem="3Sc-oj-rld" firstAttribute="leading" secondItem="pgb-UC-ag5" secondAttribute="leading" constant="85.5" id="qth-2Q-lmI"/>
+                <constraint firstItem="3Sc-oj-rld" firstAttribute="centerX" secondItem="pgb-UC-ag5" secondAttribute="centerX" id="xcn-Yr-zjS"/>
+                <constraint firstItem="pgb-UC-ag5" firstAttribute="bottom" secondItem="Qd0-0B-aCV" secondAttribute="bottom" constant="18" id="yQf-Va-TSl"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="pgb-UC-ag5"/>
+            <point key="canvasLocation" x="358.5" y="4"/>
+        </view>
+    </objects>
+</document>

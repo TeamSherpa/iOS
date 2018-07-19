@@ -22,7 +22,7 @@ extension MainViewController: UITableViewDelegate {
             case .local: return 190
             case .info: return 180
             case .distance: return 220
-            default: return 48
+            default: return 220
             }
         }
     }
