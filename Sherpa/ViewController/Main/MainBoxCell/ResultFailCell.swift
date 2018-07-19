@@ -8,18 +8,11 @@
 
 import UIKit
 
-class ResultFailCell: UICollectionViewCell ,CollectionViewModelRepresentable{
+class ResultFailCell: UICollectionViewCell, CollectionViewModelRepresentable {
+    var model: ModelTransformable?
 
-   
     override func awakeFromNib() {
         super.awakeFromNib()
         setShadow()
-    }
-    
-    var model: ModelTransformable? {
-        didSet {
-            let distance = model as? Distance
-           
-        }
     }
 }

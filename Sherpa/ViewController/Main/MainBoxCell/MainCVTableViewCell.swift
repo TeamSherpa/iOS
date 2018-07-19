@@ -18,7 +18,7 @@ class MainCVTableViewCell: UITableViewCell {
     @IBOutlet weak var resultCollectionViewHeightConstraint: NSLayoutConstraint!
    
     
-    var model = [ModelTransformable]() {
+    var model = [ModelTransformable?]() {
         didSet {
             orderCV.reloadData()
         }
@@ -30,8 +30,6 @@ class MainCVTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        
         setDelegate()
         registerCell()
     }
@@ -59,42 +57,30 @@ extension MainCVTableViewCell: UICollectionViewDelegateFlowLayout {
             return .zero
         }
         switch category {
+        case .none, .distance:
+            resultCollectionViewHeightConstraint.constant = 153
+            layoutIfNeeded()
+            return CGSize(width: UIScreen.main.bounds.width - 30, height: 140)
         case .education:
             resultCollectionViewHeightConstraint.constant = 163
-            
             layoutIfNeeded()
             return CGSize(width: 129, height: 150)
         case .news, .mountain:
             resultCollectionViewHeightConstraint.constant = 253
-           
             layoutIfNeeded()
             return CGSize(width: 170, height: 220)
         case .traffic:
             resultCollectionViewHeightConstraint.constant = 240
-       
             layoutIfNeeded()
             return CGSize(width: UIScreen.main.bounds.width - 30, height: 210)
         case .local:
             resultCollectionViewHeightConstraint.constant = 123
-          
             layoutIfNeeded()
             return CGSize(width: 180, height: 110)
         case .info:
             resultCollectionViewHeightConstraint.constant = 113
-           
             layoutIfNeeded()
             return CGSize(width: UIScreen.main.bounds.width - 30, height: 100)
-        case .distance:
-            resultCollectionViewHeightConstraint.constant = 153
-            
-            layoutIfNeeded()
-            return CGSize(width: UIScreen.main.bounds.width - 30, height: 140)
-        case .none:
-            resultCollectionViewHeightConstraint.constant = 153
-            
-            layoutIfNeeded()
-            return CGSize(width: UIScreen.main.bounds.width - 30, height: 140)
-            
         default:
             return .zero
         }
@@ -122,7 +108,6 @@ extension MainCVTableViewCell: UICollectionViewDelegate {
 
 extension MainCVTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         return model.count > 5 ? 5 : model.count
     }
     
@@ -130,7 +115,6 @@ extension MainCVTableViewCell: UICollectionViewDataSource {
         guard let identifier = category?.cellIdentifier, identifier.isNotEmpty else {
             return UICollectionViewCell()
         }
-        print(11111)
         var cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! CollectionViewModelRepresentable
         cell.model = model[indexPath.item]
         return cell as! UICollectionViewCell
