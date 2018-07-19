@@ -39,7 +39,7 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
     var tabley: CGFloat = 0
     var isListening: Bool = false
     var getweather : WeatherMeta?
-    var model = [[ModelTransformable]]() {
+    var model = [[ModelTransformable?]]() {
         didSet {
             tableview.reloadData()
         }
@@ -153,17 +153,17 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
                         speechNetwork.sendSpeech(string: self.micStringLB.text ?? "") { category, model, error in
                             guard error == nil else {
                                 self.ttsResultFail(speechdata: self.micStringLB.text!)
-                                self.category.append(.none)
-                                self.model.append([])
+                                self.category.append(Category.none)
+                                self.model.append([nil])
                                 return
                             }
                             guard let model = model, let category = category else {
                                 self.ttsResultFail(speechdata: self.micStringLB.text!)
-                                self.category.append(.none)
-                                self.model.append([])
+                                self.category.append(Category.none)
+                                self.model.append([nil])
                                 return
                             }
-                             self.ttsResultSuccess(speechdata: self.micStringLB.text!)
+                            self.ttsResultSuccess(speechdata: self.micStringLB.text!)
                             self.category.append(category)
                             self.model.append(model)
                         }

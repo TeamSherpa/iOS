@@ -289,7 +289,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="VjM-OC-srE"/>
                     <connections>
-                        <outlet property="addressLB" destination="zpI-cg-hrw" id="RQM-oc-eIq"/>
+                        <outlet property="addressLB" destination="zpI-cg-hrw" id="URK-hN-5tq"/>
                         <outlet property="cancelmicBtn" destination="9Af-Q8-34b" id="UlH-K6-BGi"/>
                         <outlet property="currentTemLB" destination="zXQ-Qe-0A0" id="TuL-zb-x0L"/>
                         <outlet property="currentweatherImg" destination="P5B-eq-yV8" id="gJp-e6-cZs"/>
@@ -297,7 +297,7 @@
                         <outlet property="micBtn" destination="Jqj-2v-WCA" id="IAb-Lo-yY7"/>
                         <outlet property="micStringLB" destination="EGh-p2-hpP" id="mXl-SF-7vs"/>
                         <outlet property="minTemLB" destination="4hN-Fd-TdY" id="LSv-vJ-zad"/>
-                        <outlet property="mountainNameLB" destination="aEh-So-waK" id="FOa-h7-qVH"/>
+                        <outlet property="mountainNameLB" destination="aEh-So-waK" id="uSU-SN-TqQ"/>
                         <outlet property="recommendLabel" destination="UmN-Te-Xrn" id="2bW-lw-exc"/>
                         <outlet property="tableview" destination="2ey-bM-CJp" id="rpx-5y-2aX"/>
                         <segue destination="M0g-gg-qHv" kind="show" identifier="DetailMountainViewController" id="rnL-nu-hIB"/>

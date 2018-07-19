@@ -16,8 +16,9 @@ class MainCVTableViewCell: UITableViewCell {
     @IBOutlet weak var voiceRecodeLB: UILabel!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var resultCollectionViewHeightConstraint: NSLayoutConstraint!
+   
     
-    var model = [ModelTransformable]() {
+    var model = [ModelTransformable?]() {
         didSet {
             orderCV.reloadData()
         }
@@ -46,6 +47,7 @@ class MainCVTableViewCell: UITableViewCell {
         orderCV.register(UINib(nibName: "LocalCell", bundle: .main), forCellWithReuseIdentifier: "LocalCell")
         orderCV.register(UINib(nibName: "MountainInfoCell", bundle: .main), forCellWithReuseIdentifier: "MountainInfoCell")
         orderCV.register(UINib(nibName: "DistanceCell", bundle: .main), forCellWithReuseIdentifier: "DistanceCell")
+        orderCV.register(UINib(nibName: "ResultFailCell", bundle: .main), forCellWithReuseIdentifier: "ResultFailCell")
     }
 }
 
@@ -55,6 +57,10 @@ extension MainCVTableViewCell: UICollectionViewDelegateFlowLayout {
             return .zero
         }
         switch category {
+        case .none, .distance:
+            resultCollectionViewHeightConstraint.constant = 153
+            layoutIfNeeded()
+            return CGSize(width: UIScreen.main.bounds.width - 30, height: 140)
         case .education:
             resultCollectionViewHeightConstraint.constant = 163
             layoutIfNeeded()
@@ -75,10 +81,6 @@ extension MainCVTableViewCell: UICollectionViewDelegateFlowLayout {
             resultCollectionViewHeightConstraint.constant = 113
             layoutIfNeeded()
             return CGSize(width: UIScreen.main.bounds.width - 30, height: 100)
-        case .distance:
-            resultCollectionViewHeightConstraint.constant = 153
-            layoutIfNeeded()
-            return CGSize(width: UIScreen.main.bounds.width - 30, height: 140)
         default:
             return .zero
         }
