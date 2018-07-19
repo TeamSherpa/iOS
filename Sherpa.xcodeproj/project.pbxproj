@@ -53,6 +53,9 @@
 		CEB2C17A20FF5CAD005DF446 /* MainViewController+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB2C17920FF5CAD005DF446 /* MainViewController+Network.swift */; };
 		CEB2C17E20FF6EA3005DF446 /* MountainInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEB2C17D20FF6EA3005DF446 /* MountainInfoCell.xib */; };
 		CEB2C18020FF6F1F005DF446 /* MountainInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB2C17F20FF6F1F005DF446 /* MountainInfoCell.swift */; };
+		CEB2C182210035BD005DF446 /* DistanceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEB2C181210035BD005DF446 /* DistanceCell.xib */; };
+		CEB2C18421003A98005DF446 /* DistanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB2C18321003A98005DF446 /* DistanceCell.swift */; };
+		CEB2C18621003AC0005DF446 /* Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB2C18521003AC0005DF446 /* Distance.swift */; };
 		CED9E9A420D810B000B261BF /* SGISVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9A220D810B000B261BF /* SGISVO.swift */; };
 		CED9E9A520D810B000B261BF /* WGSVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9A320D810B000B261BF /* WGSVO.swift */; };
 		CED9E9A820D810DB00B261BF /* SGISNM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9A620D810DB00B261BF /* SGISNM.swift */; };
@@ -139,6 +142,9 @@
 		CEB2C17920FF5CAD005DF446 /* MainViewController+Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainViewController+Network.swift"; sourceTree = "<group>"; };
 		CEB2C17D20FF6EA3005DF446 /* MountainInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MountainInfoCell.xib; sourceTree = "<group>"; };
 		CEB2C17F20FF6F1F005DF446 /* MountainInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainInfoCell.swift; sourceTree = "<group>"; };
+		CEB2C181210035BD005DF446 /* DistanceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DistanceCell.xib; sourceTree = "<group>"; };
+		CEB2C18321003A98005DF446 /* DistanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceCell.swift; sourceTree = "<group>"; };
+		CEB2C18521003AC0005DF446 /* Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Distance.swift; sourceTree = "<group>"; };
 		CED9E9A220D810B000B261BF /* SGISVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGISVO.swift; sourceTree = "<group>"; };
 		CED9E9A320D810B000B261BF /* WGSVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WGSVO.swift; sourceTree = "<group>"; };
 		CED9E9A620D810DB00B261BF /* SGISNM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGISNM.swift; sourceTree = "<group>"; };
@@ -247,6 +253,7 @@
 				CEEEC5BD20F9CEEC004DC4F0 /* TrafficCell.xib */,
 				CE21AC8020FED5B700A7555E /* LocalCell.xib */,
 				CEB2C17D20FF6EA3005DF446 /* MountainInfoCell.xib */,
+				CEB2C181210035BD005DF446 /* DistanceCell.xib */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -294,6 +301,7 @@
 				CE962DB120DC235300B5A831 /* Education.swift */,
 				CEEEC5C120F9CF92004DC4F0 /* Location.swift */,
 				CE21AC8420FED5F500A7555E /* Local.swift */,
+				CEB2C18521003AC0005DF446 /* Distance.swift */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -343,6 +351,7 @@
 				CEEEC5BF20F9CF5E004DC4F0 /* TrafficCell.swift */,
 				CE21AC8220FED5E300A7555E /* LocalCell.swift */,
 				CEB2C17F20FF6F1F005DF446 /* MountainInfoCell.swift */,
+				CEB2C18321003A98005DF446 /* DistanceCell.swift */,
 			);
 			path = MainBoxCell;
 			sourceTree = "<group>";
@@ -589,6 +598,7 @@
 				CEEEC61B20F9E65D004DC4F0 /* HeadingAngleSmall@2x.png in Resources */,
 				CEEEC61F20F9E65D004DC4F0 /* mapbg_tlogo@2x.png in Resources */,
 				52F6D62520C0210C00245C07 /* LaunchScreen.storyboard in Resources */,
+				CEB2C182210035BD005DF446 /* DistanceCell.xib in Resources */,
 				CEEEC61A20F9E65D004DC4F0 /* TrackingDot@2x.png in Resources */,
 				CE8E4F6420DF4E7900F4964E /* MountainCell.xib in Resources */,
 				CEEEC62320F9E65D004DC4F0 /* icon_clustering@2x.png in Resources */,
@@ -703,6 +713,7 @@
 				CED9E9BE20D9710400B261BF /* Collection+Extension.swift in Sources */,
 				CE89B15920D4C8E300619841 /* UIViewController+Extension.swift in Sources */,
 				CE18F23320DC0A2D0016EC8E /* ArticleCollectionViewCell.swift in Sources */,
+				CEB2C18421003A98005DF446 /* DistanceCell.swift in Sources */,
 				CE35BBC920D650000068C189 /* Mountain.swift in Sources */,
 				CE35BBC520D64BED0068C189 /* DetailListCell.swift in Sources */,
 				CED9E9A920D810DB00B261BF /* GetWGSNM.swift in Sources */,
@@ -716,6 +727,7 @@
 				CED9E9AE20D9613600B261BF /* MapViewController.swift in Sources */,
 				CE35BBCF20D694B40068C189 /* TrailCell.swift in Sources */,
 				5250773320CCD83C009EA147 /* extension.swift in Sources */,
+				CEB2C18621003AC0005DF446 /* Distance.swift in Sources */,
 				CE35BBD520D695F00068C189 /* Trail.swift in Sources */,
 				CE35BBD720D696490068C189 /* NetworkRequestor.swift in Sources */,
 				CE89B15720D4C0FF00619841 /* RecommendModel.swift in Sources */,

@@ -45,6 +45,7 @@ class MainCVTableViewCell: UITableViewCell {
         orderCV.register(UINib(nibName: "TrafficCell", bundle: .main), forCellWithReuseIdentifier: "TrafficCell")
         orderCV.register(UINib(nibName: "LocalCell", bundle: .main), forCellWithReuseIdentifier: "LocalCell")
         orderCV.register(UINib(nibName: "MountainInfoCell", bundle: .main), forCellWithReuseIdentifier: "MountainInfoCell")
+        orderCV.register(UINib(nibName: "DistanceCell", bundle: .main), forCellWithReuseIdentifier: "DistanceCell")
     }
 }
 
@@ -74,6 +75,10 @@ extension MainCVTableViewCell: UICollectionViewDelegateFlowLayout {
             resultCollectionViewHeightConstraint.constant = 113
             layoutIfNeeded()
             return CGSize(width: UIScreen.main.bounds.width - 30, height: 100)
+        case .distance:
+            resultCollectionViewHeightConstraint.constant = 153
+            layoutIfNeeded()
+            return CGSize(width: UIScreen.main.bounds.width - 30, height: 140)
         default:
             return .zero
         }

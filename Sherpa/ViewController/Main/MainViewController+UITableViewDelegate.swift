@@ -21,6 +21,7 @@ extension MainViewController: UITableViewDelegate {
             case .traffic: return 300
             case .local: return 190
             case .info: return 180
+            case .distance: return 220
             default: return 48
             }
         }
