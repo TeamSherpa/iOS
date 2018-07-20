@@ -13,6 +13,7 @@
 		5250773320CCD83C009EA147 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250773220CCD83C009EA147 /* extension.swift */; };
 		52A90DF120DE9465009D4FF3 /* NetworkCallBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A90DF020DE9465009D4FF3 /* NetworkCallBack.swift */; };
 		52AA2F4220C4170700BE1D31 /* MainCVTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA2F4120C4170700BE1D31 /* MainCVTableViewCell.swift */; };
+		52B8F4AF21027ADF00099145 /* Traffic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B8F4AE21027ADF00099145 /* Traffic.swift */; };
 		52C972B120D4D8010000988E /* SpeechNM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C972B020D4D8010000988E /* SpeechNM.swift */; };
 		52C972B620D4E4E50000988E /* SpeachStringresult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C972B520D4E4E50000988E /* SpeachStringresult.swift */; };
 		52D58CA821009F59001E0FF0 /* ArticleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D58CA621009F58001E0FF0 /* ArticleCollectionViewCell.swift */; };
@@ -101,6 +102,7 @@
 		5250773220CCD83C009EA147 /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 		52A90DF020DE9465009D4FF3 /* NetworkCallBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCallBack.swift; sourceTree = "<group>"; };
 		52AA2F4120C4170700BE1D31 /* MainCVTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCVTableViewCell.swift; sourceTree = "<group>"; };
+		52B8F4AE21027ADF00099145 /* Traffic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Traffic.swift; sourceTree = "<group>"; };
 		52C972B020D4D8010000988E /* SpeechNM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechNM.swift; sourceTree = "<group>"; };
 		52C972B520D4E4E50000988E /* SpeachStringresult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeachStringresult.swift; sourceTree = "<group>"; };
 		52D58CA621009F58001E0FF0 /* ArticleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 				CEEEC5C120F9CF92004DC4F0 /* Location.swift */,
 				CE21AC8420FED5F500A7555E /* Local.swift */,
 				CEB2C18521003AC0005DF446 /* Distance.swift */,
+				52B8F4AE21027ADF00099145 /* Traffic.swift */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -746,6 +749,7 @@
 				CED9E9BC20D96DE700B261BF /* MainViewController+UITableViewDataSource.swift in Sources */,
 				CED9E9A820D810DB00B261BF /* SGISNM.swift in Sources */,
 				CE35BBC720D64C950068C189 /* DetailListViewController+UITableViewDelegate.swift in Sources */,
+				52B8F4AF21027ADF00099145 /* Traffic.swift in Sources */,
 				CE35BBD120D695090068C189 /* DetailMountainViewController+UICollectionViewDelegate.swift in Sources */,
 				CE962DB220DC235300B5A831 /* Education.swift in Sources */,
 				521B80DD20C938E2003F8833 /* MainViewController.swift in Sources */,
@@ -911,7 +915,10 @@
 				DEVELOPMENT_TEAM = KB65UR5HX8;
 				INFOPLIST_FILE = "$(SRCROOT)/Sherpa/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Sherpa/OpenSource/lib",
@@ -936,7 +943,10 @@
 				DEVELOPMENT_TEAM = KB65UR5HX8;
 				INFOPLIST_FILE = "$(SRCROOT)/Sherpa/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Sherpa/OpenSource/lib",

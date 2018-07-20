@@ -238,6 +238,7 @@
                                         <connections>
                                             <outlet property="indicator" destination="1Ts-Ke-TY1" id="ej4-jf-gfd"/>
                                             <outlet property="orderCV" destination="JB2-9X-Hey" id="EEO-ni-gb8"/>
+                                            <outlet property="qustionImg" destination="S0D-fI-NMH" id="Btt-xR-Nrk"/>
                                             <outlet property="resultCollectionViewHeightConstraint" destination="3lY-P3-N09" id="ure-9R-9MN"/>
                                             <outlet property="voiceRecodeLB" destination="dGG-eR-el2" id="L6O-6y-1xk"/>
                                         </connections>

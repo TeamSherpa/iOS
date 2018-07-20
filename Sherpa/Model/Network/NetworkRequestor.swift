@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+
 enum NetworkError: Error {
     case failure
 }
@@ -49,6 +50,7 @@ struct NetworkRequestor {
             }
         }
     }
+    
     
     public func requestJSON(completion: CompletionJSON) {
         manager.request(api.requestUrl, method: api.method, parameters: api.parameters, headers: api.headers).responseJSON { response in

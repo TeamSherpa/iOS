@@ -15,6 +15,7 @@ class DistanceCell: UICollectionViewCell, CollectionViewModelRepresentable {
     override func awakeFromNib() {
         super.awakeFromNib()
         setShadow()
+        print(distanceLabel.text)
     }
     
     var model: ModelTransformable? {

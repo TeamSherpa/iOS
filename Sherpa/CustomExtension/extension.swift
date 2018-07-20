@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 import Kingfisher
 
+
+
 extension UITableView {
     
     func scrollToBottom() {
@@ -72,7 +74,7 @@ extension UITableViewCell {
         return num
     }
 }
-extension UICollectionReusableView {
+extension UICollectionViewCell {
     //옵셔널 String을 해제하는데 값이 nil이면 ""을 반환
     func gsno(_ data: String?) -> String {
         guard let str = data else {
@@ -87,6 +89,12 @@ extension UICollectionReusableView {
             return 0
         }
         return num
+    }
+    func gdno(_ data: Double?) -> Double {
+        guard let double = data else {
+            return 0.0
+        }
+        return double
     }
 }
 
