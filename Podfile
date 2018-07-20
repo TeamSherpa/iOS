@@ -7,7 +7,7 @@ target 'Sherpa' do
 
     pod 'Alamofire'
     pod 'AlamofireObjectMapper'
-    pod 'ObjectMapper'
+    pod 'ObjectMapper' 
     pod 'SwiftyJSON'
     pod 'Kingfisher', '4.6.3'
     pod 'NVActivityIndicatorView'

@@ -29,6 +29,8 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
     
+    let synthesizer = AVSpeechSynthesizer()
+    
     let activityIndicatorView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 20, height: 20),
                                                                   type: NVActivityIndicatorType(rawValue: 23)!)
  
@@ -174,15 +176,7 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
                 }
             }
         }
-        
-        let audioSession = AVAudioSession.sharedInstance()
-        do {
-            try audioSession.setCategory(AVAudioSessionCategoryRecord)
-            try audioSession.setMode(AVAudioSessionModeMeasurement)
-            try audioSession.setActive(true, with: .notifyOthersOnDeactivation)
-        } catch {
-            print("error: ", error.localizedDescription)
-        }
+
         
         let recordingFormat = audioEngine.inputNode.outputFormat(forBus: 0)
         audioEngine.inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { [weak self] buffer, time in
@@ -231,7 +225,6 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
     }
     
     func ttsResultSuccess(speechdata : String) {
-        let synthesizer = AVSpeechSynthesizer()
         let utterance = AVSpeechUtterance(string: speechdata + "에 대한결과입니다.")
         utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
         utterance.rate = 0.4
@@ -240,7 +233,6 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
     
     
     func ttsResultFail(speechdata : String) {
-        let synthesizer = AVSpeechSynthesizer()
         let utterance = AVSpeechUtterance(string: speechdata + "에 대한결과가 없습니다.")
         utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
         utterance.rate = 0.4

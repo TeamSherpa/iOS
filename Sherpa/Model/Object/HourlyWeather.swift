@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct getHourlyWeather: Codable, ModelTransformable {
+struct HourlyWeather: Codable, ModelTransformable {
 	let result : Int?
 	let meta : WeatherMeta?
 
