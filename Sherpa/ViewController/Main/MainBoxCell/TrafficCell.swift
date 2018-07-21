@@ -33,12 +33,14 @@ class TrafficCell: UICollectionViewCell, CollectionViewModelRepresentable, TMapV
         if CLLocationManager.locationServicesEnabled(){
             locationManager.startUpdatingLocation()
         }
-       
     }
     
     func setupMap(long:Double ,lat:Double ,currentlong:Double ,currentlat:Double) {
         // tmap 생성
         mapView = TMapView.init(frame: mapContainerView.bounds)
+        mapView?.layer.cornerRadius = 3
+        mapView?.layer.masksToBounds = true
+        
         guard let MapView = mapView else {
             print("[Main] TMap을 생성하는 데 실패했습니다")
             return
@@ -118,8 +120,6 @@ class TrafficCell: UICollectionViewCell, CollectionViewModelRepresentable, TMapV
         didSet {
             if let location = model as? MountainLocation {
                 setupMap(long:gdno(Double(location.longitude)), lat: gdno(Double(location.latitude)), currentlong:gdno(locationManager.location?.coordinate.longitude) ,currentlat:gdno(locationManager.location?.coordinate.latitude))
-                
-   
             }
         }
     }

@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TrafficCell" customModule="Sherpa" customModuleProvider="target">
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB" customClass="TrafficCell" customModule="Sherpa" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="343" height="210"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -23,7 +23,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wCL-b3-7vX">
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wCL-b3-7vX">
                     <rect key="frame" x="0.0" y="180" width="343" height="30"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이동거리" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u96-FU-fVw">
@@ -55,6 +55,9 @@
                         <constraint firstItem="u96-FU-fVw" firstAttribute="leading" secondItem="aUC-OL-wzb" secondAttribute="trailing" constant="29" id="ZDH-Yq-Ii9"/>
                         <constraint firstItem="u96-FU-fVw" firstAttribute="centerY" secondItem="wCL-b3-7vX" secondAttribute="centerY" id="dIT-IE-rHn"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
