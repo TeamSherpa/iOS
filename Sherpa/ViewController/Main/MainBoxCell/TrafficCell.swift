@@ -73,8 +73,10 @@ class TrafficCell: UICollectionViewCell, CollectionViewModelRepresentable, TMapV
             return
         }
         
-        var info = path.findTimeMachineCarPath(withStart: startPoint, end: endPoint, isStartTime: true, time: Date(), wayPoints: nil)
-        let infoarray = JSON(info![AnyHashable("features")].unsafelyUnwrapped)
+        guard let info = path.findTimeMachineCarPath(withStart: startPoint, end: endPoint, isStartTime: true, time: Date(), wayPoints: nil) else {
+            return
+        }
+        let infoarray = JSON(info[AnyHashable("features")].unsafelyUnwrapped)
       
         let jsonString = infoarray[0]["properties"].description
         let jsonData = jsonString.data(using: .utf8) ?? Data()
