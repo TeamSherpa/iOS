@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 import SwiftyJSON
 
-class TrafficCell: UICollectionViewCell, CollectionViewModelRepresentable, TMapViewDelegate ,TMapPathDelegate,CLLocationManagerDelegate{
+class TrafficCell: UICollectionViewCell, CollectionViewModelRepresentable, TMapViewDelegate, TMapPathDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var mapContainerView: UIView!
     @IBOutlet weak var distanceLB: UILabel!
@@ -33,6 +33,7 @@ class TrafficCell: UICollectionViewCell, CollectionViewModelRepresentable, TMapV
         if CLLocationManager.locationServicesEnabled(){
             locationManager.startUpdatingLocation()
         }
+        TMapTapi.setSKPMapAuthenticationWith(self, apiKey: APIConfiguration.tmapKey)
     }
     
     func setupMap(long:Double ,lat:Double ,currentlong:Double ,currentlat:Double) {
@@ -64,11 +65,11 @@ class TrafficCell: UICollectionViewCell, CollectionViewModelRepresentable, TMapV
         polyLine?.lineColor_ = #colorLiteral(red: 0, green: 0.3414386511, blue: 0.332439363, alpha: 1)
         polyLine?.lineWidth_ =  3
         
-        if polyLine == nil {
+        guard polyLine != nil else {
             return
         }
         
-        if polyLine?.getPoint().count == 0 {
+        guard polyLine?.getPoint().count != 0 else {
             return
         }
         
@@ -123,4 +124,13 @@ class TrafficCell: UICollectionViewCell, CollectionViewModelRepresentable, TMapV
             }
         }
     }
+    
+    func didSelectedAction() {
+        guard let coordinate = startPoint?.coordinate else {
+            return
+        }
+        TMapTapi.invokeRoute("관악산", coordinate: coordinate)
+    }
 }
+
+extension TrafficCell: TMapTapiDelegate { }
