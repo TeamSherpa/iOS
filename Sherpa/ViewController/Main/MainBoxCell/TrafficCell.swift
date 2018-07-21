@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 import SwiftyJSON
 
-class TrafficCell: UICollectionViewCell, CollectionViewModelRepresentable, TMapViewDelegate ,TMapPathDelegate,CLLocationManagerDelegate{
+class TrafficCell: UICollectionViewCell, CollectionViewModelRepresentable, TMapViewDelegate, TMapPathDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var mapContainerView: UIView!
     @IBOutlet weak var distanceLB: UILabel!
@@ -21,6 +21,7 @@ class TrafficCell: UICollectionViewCell, CollectionViewModelRepresentable, TMapV
     var mapView: TMapView?
     var startPoint: TMapPoint?
     var endPoint: TMapPoint?
+    var isDrawedPath = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,24 +34,24 @@ class TrafficCell: UICollectionViewCell, CollectionViewModelRepresentable, TMapV
         if CLLocationManager.locationServicesEnabled(){
             locationManager.startUpdatingLocation()
         }
-       
+        TMapTapi.setSKPMapAuthenticationWith(self, apiKey: APIConfiguration.tmapKey)
+        
+        setupMap()
     }
     
-    func setupMap(long:Double ,lat:Double ,currentlong:Double ,currentlat:Double) {
-        // tmap 생성
+    func setupMap() {
         mapView = TMapView.init(frame: mapContainerView.bounds)
-        guard let MapView = mapView else {
-            print("[Main] TMap을 생성하는 데 실패했습니다")
-            return
-        }
-        MapView.setSKTMapApiKey(APIConfiguration.tmapKey)
+        mapView?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        mapView?.layer.cornerRadius = 3
+        mapView?.layer.masksToBounds = true
         
-        mapContainerView.addSubview(MapView)
-        mapContainerView.isUserInteractionEnabled = true
-        MapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        MapView.delegate = self
+        mapView?.setSKTMapApiKey(APIConfiguration.tmapKey)
+        mapView?.delegate = self
         
-        
+        mapContainerView.addSubview(mapView ?? UIView())
+    }
+    
+    func setPath(long: Double, lat:Double, currentlong: Double, currentlat: Double) {
         //tmap 경로 생성
         let path = TMapPathData()
         path.delegate = self
@@ -62,16 +63,18 @@ class TrafficCell: UICollectionViewCell, CollectionViewModelRepresentable, TMapV
         polyLine?.lineColor_ = #colorLiteral(red: 0, green: 0.3414386511, blue: 0.332439363, alpha: 1)
         polyLine?.lineWidth_ =  3
         
-        if polyLine == nil {
+        guard polyLine != nil else {
             return
         }
         
-        if polyLine?.getPoint().count == 0 {
+        guard polyLine?.getPoint().count != 0 else {
             return
         }
         
-        var info = path.findTimeMachineCarPath(withStart: startPoint, end: endPoint, isStartTime: true, time: Date(), wayPoints: nil)
-        let infoarray = JSON(info![AnyHashable("features")].unsafelyUnwrapped)
+        guard let info = path.findTimeMachineCarPath(withStart: startPoint, end: endPoint, isStartTime: true, time: Date(), wayPoints: nil) else {
+            return
+        }
+        let infoarray = JSON(info[AnyHashable("features")].unsafelyUnwrapped)
       
         let jsonString = infoarray[0]["properties"].description
         let jsonData = jsonString.data(using: .utf8) ?? Data()
@@ -97,28 +100,36 @@ class TrafficCell: UICollectionViewCell, CollectionViewModelRepresentable, TMapV
         startMarkerItem?.setIcon(UIImage(named: "marker.png"), anchorPoint: CGPoint(x: 0.4, y: 1.0))
         
         let endMarkerItem = TMapMarkerItem(tMapPoint: end)
-        endMarkerItem?.setIcon(UIImage(named: "marker.png"), anchorPoint: CGPoint(x: 0.5, y: 1.0))
-        MapView.setTMapPathIconStart(startMarkerItem, end: endMarkerItem)
+        endMarkerItem?.setIcon(UIImage(named: "end.png"), anchorPoint: CGPoint(x: 0.5, y: 1.0))
+        mapView?.setTMapPathIconStart(startMarkerItem, end: endMarkerItem)
         
         if (polyLine != nil) {
-            MapView.addTMapPath(polyLine)
+            mapView?.addTMapPath(polyLine)
         }
         
-        let mapInfo = MapView.getDisplayTMapInfo(polyLine?.getPoint())
+        let mapInfo = mapView?.getDisplayTMapInfo(polyLine?.getPoint())
         
-        MapView.setCenter(mapInfo?.mapPoint)
-        MapView.zoomLevel = gino(mapInfo?.zoomLevel)
-        MapView.setUserScrollZoomEnable(true)
-      
+        mapView?.setCenter(mapInfo?.mapPoint)
+        mapView?.zoomLevel = gino(mapInfo?.zoomLevel)
+        mapView?.setUserScrollZoomEnable(true)
+        
+        isDrawedPath = true
     }
     
     var model: ModelTransformable? {
         didSet {
-            if let location = model as? MountainLocation {
-                setupMap(long:gdno(Double(location.longitude)), lat: gdno(Double(location.latitude)), currentlong:gdno(locationManager.location?.coordinate.longitude) ,currentlat:gdno(locationManager.location?.coordinate.latitude))
-                
-   
+            if let location = model as? MountainLocation, !isDrawedPath {
+                setPath(long:gdno(Double(location.longitude)), lat: gdno(Double(location.latitude)), currentlong:gdno(locationManager.location?.coordinate.longitude) ,currentlat:gdno(locationManager.location?.coordinate.latitude))
             }
         }
     }
+    
+    func didSelectedAction() {
+        guard let coordinate = startPoint?.coordinate else {
+            return
+        }
+        TMapTapi.invokeRoute("관악산", coordinate: coordinate)
+    }
 }
+
+extension TrafficCell: TMapTapiDelegate { }

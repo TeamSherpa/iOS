@@ -16,7 +16,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="조금만 힘내세요!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQJ-Zl-ry5">
-                    <rect key="frame" x="16" y="20" width="132" height="24"/>
+                    <rect key="frame" x="121.5" y="20" width="132" height="24"/>
                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -40,7 +40,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cheerleader-2" translatesAutoresizingMaskIntoConstraints="NO" id="f0b-aI-MAa">
-                    <rect key="frame" x="152" y="23.5" width="15" height="15"/>
+                    <rect key="frame" x="257.5" y="23.5" width="15" height="15"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="15" id="N2a-mM-ILb"/>
                         <constraint firstAttribute="width" constant="15" id="eDm-lU-gW2"/>
@@ -53,8 +53,8 @@
                 <constraint firstItem="6zw-sU-Ud4" firstAttribute="bottom" secondItem="3HO-qC-ihB" secondAttribute="bottom" constant="-10" id="RT4-K5-17w"/>
                 <constraint firstItem="3HO-qC-ihB" firstAttribute="leading" secondItem="6zw-sU-Ud4" secondAttribute="trailing" constant="1" id="SHE-eE-uLN"/>
                 <constraint firstItem="f0b-aI-MAa" firstAttribute="centerY" secondItem="WQJ-Zl-ry5" secondAttribute="centerY" constant="-1" id="c64-w0-ZkC"/>
+                <constraint firstItem="WQJ-Zl-ry5" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="i0s-9o-hW6"/>
                 <constraint firstItem="r9i-kE-vMR" firstAttribute="bottom" secondItem="3HO-qC-ihB" secondAttribute="bottom" constant="-10" id="kAn-lr-Tm2"/>
-                <constraint firstItem="WQJ-Zl-ry5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="oZC-b4-CP7"/>
                 <constraint firstItem="3HO-qC-ihB" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="qB8-Au-Ef5"/>
                 <constraint firstItem="f0b-aI-MAa" firstAttribute="leading" secondItem="WQJ-Zl-ry5" secondAttribute="trailing" constant="4" id="rlK-gO-iVC"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="3HO-qC-ihB" secondAttribute="bottom" constant="20" id="tZw-4z-aHY"/>

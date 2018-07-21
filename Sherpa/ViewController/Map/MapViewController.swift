@@ -41,7 +41,7 @@ class MapViewController: UIViewController {
         let camera = GMSCameraPosition.camera(withLatitude: position?.posY ?? 0, longitude: position?.posX ?? 0, zoom: 16)
         let mapView = GMSMapView.map(withFrame: view.bounds, camera: camera)
         mapView.isMyLocationEnabled = true
-        mapView.mapType = .hybrid
+        mapView.mapType = .normal
         return mapView
     }
     

@@ -62,16 +62,14 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
         updateUI()
         addGesture()
        
-        requestHourlyWeather(city: gsno(randomMountain?.city), county: gsno(randomMountain?.county), village: gsno(randomMountain?.country)) { [weak self](weather) in
-            
+        requestHourlyWeather(city: gsno(randomMountain?.city), county: gsno(randomMountain?.county), village: gsno(randomMountain?.country)) { [weak self] weather in
             if weather != nil{
-                
                 var min = weather?.tempMin?.components(separatedBy: ".")
                 var max = weather?.tempMax?.components(separatedBy: ".")
                 var current = weather?.tempNow?.components(separatedBy: ".")
-                let  city : String = (self?.randomMountain?.city)!
-                let  county : String = (self?.randomMountain?.county)!
-                let  country : String = (self?.randomMountain?.country)!
+                let city = (self?.randomMountain?.city ?? "") + "특별시" // 임시
+                let county = self?.randomMountain?.county ?? ""
+                let country = self?.randomMountain?.country ?? ""
                 
                 self?.addressLB.text = city + " " + county + " " + country
                 self?.mountainNameLB.text = self?.gsno(self?.randomMountain?.name)
