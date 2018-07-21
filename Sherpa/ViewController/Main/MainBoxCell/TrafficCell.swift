@@ -21,6 +21,7 @@ class TrafficCell: UICollectionViewCell, CollectionViewModelRepresentable, TMapV
     var mapView: TMapView?
     var startPoint: TMapPoint?
     var endPoint: TMapPoint?
+    var isDrawedPath = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,26 +35,23 @@ class TrafficCell: UICollectionViewCell, CollectionViewModelRepresentable, TMapV
             locationManager.startUpdatingLocation()
         }
         TMapTapi.setSKPMapAuthenticationWith(self, apiKey: APIConfiguration.tmapKey)
+        
+        setupMap()
     }
     
-    func setupMap(long:Double ,lat:Double ,currentlong:Double ,currentlat:Double) {
-        // tmap 생성
+    func setupMap() {
         mapView = TMapView.init(frame: mapContainerView.bounds)
+        mapView?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView?.layer.cornerRadius = 3
         mapView?.layer.masksToBounds = true
         
-        guard let MapView = mapView else {
-            print("[Main] TMap을 생성하는 데 실패했습니다")
-            return
-        }
-        MapView.setSKTMapApiKey(APIConfiguration.tmapKey)
+        mapView?.setSKTMapApiKey(APIConfiguration.tmapKey)
+        mapView?.delegate = self
         
-        mapContainerView.addSubview(MapView)
-        mapContainerView.isUserInteractionEnabled = true
-        MapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        MapView.delegate = self
-        
-        
+        mapContainerView.addSubview(mapView ?? UIView())
+    }
+    
+    func setPath(long: Double, lat:Double, currentlong: Double, currentlat: Double) {
         //tmap 경로 생성
         let path = TMapPathData()
         path.delegate = self
@@ -103,26 +101,27 @@ class TrafficCell: UICollectionViewCell, CollectionViewModelRepresentable, TMapV
         
         let endMarkerItem = TMapMarkerItem(tMapPoint: end)
         endMarkerItem?.setIcon(UIImage(named: "end.png"), anchorPoint: CGPoint(x: 0.5, y: 1.0))
-        MapView.setTMapPathIconStart(startMarkerItem, end: endMarkerItem)
+        mapView?.setTMapPathIconStart(startMarkerItem, end: endMarkerItem)
         
         
         
         if (polyLine != nil) {
-            MapView.addTMapPath(polyLine)
+            mapView?.addTMapPath(polyLine)
         }
         
-        let mapInfo = MapView.getDisplayTMapInfo(polyLine?.getPoint())
+        let mapInfo = mapView?.getDisplayTMapInfo(polyLine?.getPoint())
         
-        MapView.setCenter(mapInfo?.mapPoint)
-        MapView.zoomLevel = gino(mapInfo?.zoomLevel)
-        MapView.setUserScrollZoomEnable(true)
-      
+        mapView?.setCenter(mapInfo?.mapPoint)
+        mapView?.zoomLevel = gino(mapInfo?.zoomLevel)
+        mapView?.setUserScrollZoomEnable(true)
+        
+        isDrawedPath = true
     }
     
     var model: ModelTransformable? {
         didSet {
-            if let location = model as? MountainLocation {
-                setupMap(long:gdno(Double(location.longitude)), lat: gdno(Double(location.latitude)), currentlong:gdno(locationManager.location?.coordinate.longitude) ,currentlat:gdno(locationManager.location?.coordinate.latitude))
+            if let location = model as? MountainLocation, !isDrawedPath {
+                setPath(long:gdno(Double(location.longitude)), lat: gdno(Double(location.latitude)), currentlong:gdno(locationManager.location?.coordinate.longitude) ,currentlat:gdno(locationManager.location?.coordinate.latitude))
             }
         }
     }
