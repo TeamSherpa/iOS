@@ -26,6 +26,7 @@ class MainCVTableViewCell: UITableViewCell {
     
     var didSelectMountainCell: ((ModelTransformable?) -> Void)?
     
+    @IBOutlet weak var qustionImg: UIImageView!
     var category: Category?
     
     override func awakeFromNib() {
@@ -116,6 +117,9 @@ extension MainCVTableViewCell: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         var cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! CollectionViewModelRepresentable
+        if identifier == "TrafficCell"{
+            qustionImg.image = #imageLiteral(resourceName: "nounLocation1521467Copy.png")
+        }
         cell.model = model[indexPath.item]
         return cell as! UICollectionViewCell
     }

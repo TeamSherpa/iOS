@@ -23,11 +23,47 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wCL-b3-7vX">
+                    <rect key="frame" x="0.0" y="180" width="343" height="30"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이동거리" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u96-FU-fVw">
+                            <rect key="frame" x="284.5" y="7" width="48.5" height="17"/>
+                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUC-OL-wzb">
+                            <rect key="frame" x="206.5" y="7" width="49" height="17"/>
+                            <attributedString key="attributedText">
+                                <fragment content="소요시간">
+                                    <attributes>
+                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <font key="NSFont" size="14" name="AppleSDGothicNeo-Regular"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.27450980390000002" blue="0.26274509800000001" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="u96-FU-fVw" firstAttribute="top" secondItem="wCL-b3-7vX" secondAttribute="top" constant="7" id="1FA-xq-X2D"/>
+                        <constraint firstItem="aUC-OL-wzb" firstAttribute="centerY" secondItem="u96-FU-fVw" secondAttribute="centerY" id="663-8t-dIa"/>
+                        <constraint firstAttribute="trailing" secondItem="u96-FU-fVw" secondAttribute="trailing" constant="10" id="CrP-9E-6Ni"/>
+                        <constraint firstAttribute="bottom" secondItem="u96-FU-fVw" secondAttribute="bottom" constant="6" id="UDI-Fp-0rQ"/>
+                        <constraint firstAttribute="height" constant="30" id="WqK-1Z-HNi"/>
+                        <constraint firstItem="u96-FU-fVw" firstAttribute="leading" secondItem="aUC-OL-wzb" secondAttribute="trailing" constant="29" id="ZDH-Yq-Ii9"/>
+                        <constraint firstItem="u96-FU-fVw" firstAttribute="centerY" secondItem="wCL-b3-7vX" secondAttribute="centerY" id="dIT-IE-rHn"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="wCL-b3-7vX" secondAttribute="trailing" id="65x-8R-3jg"/>
                 <constraint firstItem="Ar7-Be-HDI" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="E0l-cA-FXg"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Ar7-Be-HDI" secondAttribute="bottom" id="Eje-sX-Wj7"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="wCL-b3-7vX" secondAttribute="bottom" id="ZgT-0h-eI7"/>
+                <constraint firstItem="wCL-b3-7vX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="dNA-dh-LmU"/>
                 <constraint firstItem="Ar7-Be-HDI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="kPj-uo-1k1"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ar7-Be-HDI" secondAttribute="trailing" id="nAI-1v-Rg0"/>
             </constraints>
@@ -38,7 +74,9 @@
                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
             </userDefinedRuntimeAttributes>
             <connections>
+                <outlet property="distanceLB" destination="u96-FU-fVw" id="0ha-RC-mMY"/>
                 <outlet property="mapContainerView" destination="Ar7-Be-HDI" id="Vsd-pk-jHe"/>
+                <outlet property="timeLB" destination="aUC-OL-wzb" id="MSs-7u-AJ2"/>
             </connections>
         </view>
     </objects>

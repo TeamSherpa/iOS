@@ -18,7 +18,7 @@ struct Education: Codable, ModelTransformable {
 extension Education {
     
     enum CodingKeys: String, CodingKey {
-        case name = "facnm"
+        case name = ""
         case address = "addr"
         case category = "category"
         case period = "period"
