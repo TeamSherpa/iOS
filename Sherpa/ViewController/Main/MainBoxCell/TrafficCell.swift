@@ -55,8 +55,8 @@ class TrafficCell: UICollectionViewCell, CollectionViewModelRepresentable, TMapV
         //tmap 경로 생성
         let path = TMapPathData()
         path.delegate = self
-        startPoint = TMapPoint(lon:currentlong , lat: currentlat)
-        endPoint = TMapPoint(lon:long , lat: lat)
+        startPoint = TMapPoint(lon: currentlong, lat: currentlat)
+        endPoint = TMapPoint(lon: long, lat: lat)
         
         let polyLine: TMapPolyLine? = path.find(with: CAR_PATH, start: startPoint, end: endPoint)
        
@@ -81,11 +81,11 @@ class TrafficCell: UICollectionViewCell, CollectionViewModelRepresentable, TMapV
         do {
             let result = try JSONDecoder().decode(Traffic.self, from: jsonData)
             let time = Int(gino(result.totalTime) / 60)
-            if time >= 60{
+            if time >= 60 {
                 timeLB.text = "· 소요시간 약\(String(Int(time/60)))시간\(time%60)분"
-                
+            } else {
+                timeLB.text = "· 소요시간 약\(String(time))분"
             }
-            timeLB.text = "· 소요시간 약\(String(time))분"
             distanceLB.text = "· 이동거리 \(String(Int(gino(result.totalDistance) / 1000)))Km"
             
           
@@ -97,13 +97,11 @@ class TrafficCell: UICollectionViewCell, CollectionViewModelRepresentable, TMapV
         let end = polyLine?.getPoint().last as? TMapPoint
         
         let startMarkerItem = TMapMarkerItem(tMapPoint: start)
-        startMarkerItem?.setIcon(UIImage(named: "start.png"), anchorPoint: CGPoint(x: 0.4, y: 1.0))
+        startMarkerItem?.setIcon(UIImage(named: "marker.png"), anchorPoint: CGPoint(x: 0.4, y: 1.0))
         
         let endMarkerItem = TMapMarkerItem(tMapPoint: end)
         endMarkerItem?.setIcon(UIImage(named: "end.png"), anchorPoint: CGPoint(x: 0.5, y: 1.0))
         mapView?.setTMapPathIconStart(startMarkerItem, end: endMarkerItem)
-        
-        
         
         if (polyLine != nil) {
             mapView?.addTMapPath(polyLine)

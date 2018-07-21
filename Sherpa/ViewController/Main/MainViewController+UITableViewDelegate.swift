@@ -26,4 +26,8 @@ extension MainViewController: UITableViewDelegate {
             }
         }
     }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let ipath = IndexPath(row: questions.count - 1, section: 0)
+        tableView.scrollToRow(at: ipath, at: .bottom, animated: true)
+    }
 }
