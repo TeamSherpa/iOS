@@ -31,4 +31,15 @@ class EducationCollectionViewCell: UICollectionViewCell, CollectionViewModelRepr
                                                     .joined(separator: " ")
         }
     }
+    
+    func didSelectedAction() {
+        let education = model as! Education
+        guard let educationName = education.name else {
+            return
+        }
+        let url = "https://search.naver.com/search.naver?query=\(educationName)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        if let url = URL(string: url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
 }
