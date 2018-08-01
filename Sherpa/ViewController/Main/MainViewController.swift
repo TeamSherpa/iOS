@@ -67,7 +67,7 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
                 var min = weather?.tempMin?.components(separatedBy: ".")
                 var max = weather?.tempMax?.components(separatedBy: ".")
                 var current = weather?.tempNow?.components(separatedBy: ".")
-                let city = (self?.randomMountain?.city ?? "") + "특별시" // 임시
+                let city = (self?.randomMountain?.city ?? "") + "광역시" // 임시
                 let county = self?.randomMountain?.county ?? ""
                 let country = self?.randomMountain?.country ?? ""
                 

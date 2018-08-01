@@ -24,7 +24,7 @@ class LocalNotificationManager {
         content.title = "오늘의 추천산"
         content.body = "오늘은 \(RecommendMountains.acquire()?.name ?? "")을 올라보는건 어떨까요?"
         
-        let dateComponents = DateComponents(hour: 2, minute: 00)
+        let dateComponents = DateComponents(hour: 21, minute: 51)
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         let request = UNNotificationRequest(identifier: "Recommend", content: content, trigger: trigger)
